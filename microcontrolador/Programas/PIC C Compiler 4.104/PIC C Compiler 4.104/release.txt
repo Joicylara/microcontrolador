@@ -1,0 +1,9 @@
+01/01/2010 Happy new year to all!!
+
+PCWHD 4.104 - Released by CHARON for your pleasure :)
+
+1. Install pcwhdupd.exe
+2. Install ideutilsupd.exe
+3. Copy *.crg files in the PCWHD installation folder
+
+*.crg registration files are the same used for previous releases, thanks to KGG :)

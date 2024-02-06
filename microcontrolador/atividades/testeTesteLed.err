@@ -1,0 +1,4 @@
+*** Error 12 "testeTesteLed.c" Line 34(5,10): Undefined identifier   TRISB
+*** Error 12 "testeTesteLed.c" Line 37(9,14): Undefined identifier   PORTB
+*** Error 12 "testeTesteLed.c" Line 39(9,14): Undefined identifier   PORTB
+      3 Errors,  0 Warnings.

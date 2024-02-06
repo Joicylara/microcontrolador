@@ -1,0 +1,457 @@
+<html>
+<head>
+<title>LCD Simulator {/JavaScipt}</title>
+<SCRIPT LANGUAGE="JavaScript" SRC="chartable.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="lcd.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="misc.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="dispscript.js"></SCRIPT>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+<!--
+a {  font-family: Arial, Helvetica, sans-serif; text-decoration: none; cursor: hand; filter: Xray; visibility: visible; clip:  rect(   )}
+a:hover {  color: #FFFFFF; text-decoration: none; background-color: #0099CC}
+-->
+</style>
+<style type="text/css">
+<!--
+a {  font-family: Arial, Helvetica, sans-serif; text-decoration: none; cursor: hand; filter: Xray; visibility: visible; clip:  rect(   )}
+a:hover {  color: #FFFFFF; text-decoration: none; background-color: #0099CC}
+
+INPUT {
+	BACKGROUND-COLOR: #CCCCFF;
+	COLOR: #000000;	
+	border: 1px solid #000000;
+}
+TEXTAREA {
+	BACKGROUND-COLOR: #006699;
+	COLOR: #FFFFFF;
+	border: 0px solid #000000;
+}
+SELECT {
+	BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; COLOR: #000000; FONT-SIZE: 9pt
+}
+.d1 {  border: #000000; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin}
+
+-->
+</style>
+<meta name="description" content="hd44780 based character type LCD simulator" />
+<meta name="keywords" content="hd44780 character type LCD simulator " />
+</head>
+
+<body bgcolor="#006699" background="back.jpg" text="#FFFFFF" link="#00CCFF" vlink="#FF9999" alink="#FFFFFF" onLoad="reset()">
+ <form action="" name="ctrl">
+    <div align="center"><font size="4" face="Verdana, Arial, Helvetica, sans-serif"><i><b>DjLCDSIM</b></i></font><b><font size="5"><i><br />
+        </i></font></b> <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>Dincer's 
+        JavaScript LCD Simulator<i> V 1.05</i></b></font></div>
+    <div align="center">
+        <table border="0" cellspacing="2" cellpadding="3" align="center">
+            <tr> 
+                <td> 
+                    <table border="0" cellspacing="0" cellpadding="0" bgcolor="#00FF63">
+                        <tr> 
+                            <td rowspan="3"><img src="left.jpg" width="33" height="152" /></td>
+                            <td align="center" valign="top"><img src="top.jpg" width="268" height="28" align="top" /></td>
+                            <td rowspan="3"><img src="right.jpg" width="31" height="152" /></td>
+                        </tr>
+                        <tr> 
+                            <td align="center" valign="middle"> 
+                                <table border="0" align="center" cellpadding="2" cellspacing="2" bgcolor="#00FF66">
+                                    <tr> 
+                                        <td align="center" valign="middle"> 
+                                            <table border="0" cellspacing="0" cellpadding="0" align="center">
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p0"   src="0.gif" width="16" height="4" /><img name= "p8"   src="0.gif" width="16" height="4" /><img name= "p16"  src="0.gif" width="16" height="4" /><img name= "p24"  src="0.gif" width="16" height="4" /><img name= "p32"  src="0.gif" width="16" height="4" /><img name= "p40"  src="0.gif" width="16" height="4" /><img name= "p48"  src="0.gif" width="16" height="4" /><img name= "p56"  src="0.gif" width="16" height="4" /><img name= "p64"  src="0.gif" width="16" height="4" /><img name= "p72"  src="0.gif" width="16" height="4" /><img name= "p80"  src="0.gif" width="16" height="4" /><img name= "p88"  src="0.gif" width="16" height="4" /><img name= "p96"  src="0.gif" width="16" height="4" /><img name= "p104" src="0.gif" width="16" height="4" /><img name= "p112" src="0.gif" width="16" height="4" /><img name= "p120" src="0.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p1"   src="0.gif" width="16" height="4" /><img name= "p9"   src="0.gif" width="16" height="4" /><img name= "p17"  src="0.gif" width="16" height="4" /><img name= "p25"  src="0.gif" width="16" height="4" /><img name= "p33"  src="0.gif" width="16" height="4" /><img name= "p41"  src="0.gif" width="16" height="4" /><img name= "p49"  src="0.gif" width="16" height="4" /><img name= "p57"  src="0.gif" width="16" height="4" /><img name= "p65"  src="0.gif" width="16" height="4" /><img name= "p73"  src="0.gif" width="16" height="4" /><img name= "p81"  src="0.gif" width="16" height="4" /><img name= "p89"  src="0.gif" width="16" height="4" /><img name= "p97"  src="0.gif" width="16" height="4" /><img name= "p105" src="0.gif" width="16" height="4" /><img name= "p113" src="0.gif" width="16" height="4" /><img name= "p121" src="0.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p2"   src="0.gif" width="16" height="4" /><img name= "p10"  src="0.gif" width="16" height="4" /><img name= "p18"  src="0.gif" width="16" height="4" /><img name= "p26"  src="0.gif" width="16" height="4" /><img name= "p34"  src="0.gif" width="16" height="4" /><img name= "p42"  src="0.gif" width="16" height="4" /><img name= "p50"  src="0.gif" width="16" height="4" /><img name= "p58"  src="0.gif" width="16" height="4" /><img name= "p66"  src="0.gif" width="16" height="4" /><img name= "p74"  src="0.gif" width="16" height="4" /><img name= "p82"  src="0.gif" width="16" height="4" /><img name= "p90"  src="0.gif" width="16" height="4" /><img name= "p98"  src="0.gif" width="16" height="4" /><img name= "p106" src="0.gif" width="16" height="4" /><img name= "p114" src="0.gif" width="16" height="4" /><img name= "p122" src="0.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p3"   src="0.gif" width="16" height="4" /><img name= "p11"  src="0.gif" width="16" height="4" /><img name= "p19"  src="0.gif" width="16" height="4" /><img name= "p27"  src="0.gif" width="16" height="4" /><img name= "p35"  src="0.gif" width="16" height="4" /><img name= "p43"  src="0.gif" width="16" height="4" /><img name= "p51"  src="0.gif" width="16" height="4" /><img name= "p59"  src="0.gif" width="16" height="4" /><img name= "p67"  src="0.gif" width="16" height="4" /><img name= "p75"  src="0.gif" width="16" height="4" /><img name= "p83"  src="0.gif" width="16" height="4" /><img name= "p91"  src="0.gif" width="16" height="4" /><img name= "p99"  src="0.gif" width="16" height="4" /><img name= "p107" src="0.gif" width="16" height="4" /><img name= "p115" src="0.gif" width="16" height="4" /><img name= "p123" src="0.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p4"   src="0.gif" width="16" height="4" /><img name= "p12"  src="0.gif" width="16" height="4" /><img name= "p20"  src="0.gif" width="16" height="4" /><img name= "p28"  src="0.gif" width="16" height="4" /><img name= "p36"  src="0.gif" width="16" height="4" /><img name= "p44"  src="0.gif" width="16" height="4" /><img name= "p52"  src="0.gif" width="16" height="4" /><img name= "p60"  src="0.gif" width="16" height="4" /><img name= "p68"  src="0.gif" width="16" height="4" /><img name= "p76"  src="0.gif" width="16" height="4" /><img name= "p84"  src="0.gif" width="16" height="4" /><img name= "p92"  src="0.gif" width="16" height="4" /><img name= "p100" src="0.gif" width="16" height="4" /><img name= "p108" src="0.gif" width="16" height="4" /><img name= "p116" src="0.gif" width="16" height="4" /><img name= "p124" src="0.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p5"   src="0.gif" width="16" height="4" /><img name= "p13"  src="0.gif" width="16" height="4" /><img name= "p21"  src="0.gif" width="16" height="4" /><img name= "p29"  src="0.gif" width="16" height="4" /><img name= "p37"  src="0.gif" width="16" height="4" /><img name= "p45"  src="0.gif" width="16" height="4" /><img name= "p53"  src="0.gif" width="16" height="4" /><img name= "p61"  src="0.gif" width="16" height="4" /><img name= "p69"  src="0.gif" width="16" height="4" /><img name= "p77"  src="0.gif" width="16" height="4" /><img name= "p85"  src="0.gif" width="16" height="4" /><img name= "p93"  src="0.gif" width="16" height="4" /><img name= "p101" src="0.gif" width="16" height="4" /><img name= "p109" src="0.gif" width="16" height="4" /><img name= "p117" src="0.gif" width="16" height="4" /><img name= "p125" src="0.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p6"   src="0.gif" width="16" height="4" /><img name= "p14"  src="0.gif" width="16" height="4" /><img name= "p22"  src="0.gif" width="16" height="4" /><img name= "p30"  src="0.gif" width="16" height="4" /><img name= "p38"  src="0.gif" width="16" height="4" /><img name= "p46"  src="0.gif" width="16" height="4" /><img name= "p54"  src="0.gif" width="16" height="4" /><img name= "p62"  src="0.gif" width="16" height="4" /><img name= "p70"  src="0.gif" width="16" height="4" /><img name= "p78"  src="0.gif" width="16" height="4" /><img name= "p86"  src="0.gif" width="16" height="4" /><img name= "p94"  src="0.gif" width="16" height="4" /><img name= "p102" src="0.gif" width="16" height="4" /><img name= "p110" src="0.gif" width="16" height="4" /><img name= "p118" src="0.gif" width="16" height="4" /><img name= "p126" src="0.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p7"   src="0.gif" width="16" height="4" /><img name= "p15"  src="0.gif" width="16" height="4" /><img name= "p23"  src="0.gif" width="16" height="4" /><img name= "p31"  src="0.gif" width="16" height="4" /><img name= "p39"  src="0.gif" width="16" height="4" /><img name= "p47"  src="0.gif" width="16" height="4" /><img name= "p55"  src="0.gif" width="16" height="4" /><img name= "p63"  src="0.gif" width="16" height="4" /><img name= "p71"  src="0.gif" width="16" height="4" /><img name= "p79"  src="0.gif" width="16" height="4" /><img name= "p87"  src="0.gif" width="16" height="4" /><img name= "p95"  src="0.gif" width="16" height="4" /><img name= "p103" src="0.gif" width="16" height="4" /><img name= "p111" src="0.gif" width="16" height="4" /><img name= "p119" src="0.gif" width="16" height="4" /><img name= "p127" src="0.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                    <td height="4"></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p128" src="blnk.gif" width="16" height="4" /><img name= "p136" src="blnk.gif" width="16" height="4" /><img name= "p144" src="blnk.gif" width="16" height="4" /><img name= "p152" src="blnk.gif" width="16" height="4" /><img name= "p160" src="blnk.gif" width="16" height="4" /><img name= "p168" src="blnk.gif" width="16" height="4" /><img name= "p176" src="blnk.gif" width="16" height="4" /><img name= "p184" src="blnk.gif" width="16" height="4" /><img name= "p192" src="blnk.gif" width="16" height="4" /><img name= "p200" src="blnk.gif" width="16" height="4" /><img name= "p208" src="blnk.gif" width="16" height="4" /><img name= "p216" src="blnk.gif" width="16" height="4" /><img name= "p224" src="blnk.gif" width="16" height="4" /><img name= "p232" src="blnk.gif" width="16" height="4" /><img name= "p240" src="blnk.gif" width="16" height="4" /><img name= "p248" src="blnk.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p129" src="blnk.gif" width="16" height="4" /><img name= "p137" src="blnk.gif" width="16" height="4" /><img name= "p145" src="blnk.gif" width="16" height="4" /><img name= "p153" src="blnk.gif" width="16" height="4" /><img name= "p161" src="blnk.gif" width="16" height="4" /><img name= "p169" src="blnk.gif" width="16" height="4" /><img name= "p177" src="blnk.gif" width="16" height="4" /><img name= "p185" src="blnk.gif" width="16" height="4" /><img name= "p193" src="blnk.gif" width="16" height="4" /><img name= "p201" src="blnk.gif" width="16" height="4" /><img name= "p209" src="blnk.gif" width="16" height="4" /><img name= "p217" src="blnk.gif" width="16" height="4" /><img name= "p225" src="blnk.gif" width="16" height="4" /><img name= "p233" src="blnk.gif" width="16" height="4" /><img name= "p241" src="blnk.gif" width="16" height="4" /><img name= "p249" src="blnk.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p130" src="blnk.gif" width="16" height="4" /><img name= "p138" src="blnk.gif" width="16" height="4" /><img name= "p146" src="blnk.gif" width="16" height="4" /><img name= "p154" src="blnk.gif" width="16" height="4" /><img name= "p162" src="blnk.gif" width="16" height="4" /><img name= "p170" src="blnk.gif" width="16" height="4" /><img name= "p178" src="blnk.gif" width="16" height="4" /><img name= "p186" src="blnk.gif" width="16" height="4" /><img name= "p194" src="blnk.gif" width="16" height="4" /><img name= "p202" src="blnk.gif" width="16" height="4" /><img name= "p210" src="blnk.gif" width="16" height="4" /><img name= "p218" src="blnk.gif" width="16" height="4" /><img name= "p226" src="blnk.gif" width="16" height="4" /><img name= "p234" src="blnk.gif" width="16" height="4" /><img name= "p242" src="blnk.gif" width="16" height="4" /><img name= "p250" src="blnk.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p131" src="blnk.gif" width="16" height="4" /><img name= "p139" src="blnk.gif" width="16" height="4" /><img name= "p147" src="blnk.gif" width="16" height="4" /><img name= "p155" src="blnk.gif" width="16" height="4" /><img name= "p163" src="blnk.gif" width="16" height="4" /><img name= "p171" src="blnk.gif" width="16" height="4" /><img name= "p179" src="blnk.gif" width="16" height="4" /><img name= "p187" src="blnk.gif" width="16" height="4" /><img name= "p195" src="blnk.gif" width="16" height="4" /><img name= "p203" src="blnk.gif" width="16" height="4" /><img name= "p211" src="blnk.gif" width="16" height="4" /><img name= "p219" src="blnk.gif" width="16" height="4" /><img name= "p227" src="blnk.gif" width="16" height="4" /><img name= "p235" src="blnk.gif" width="16" height="4" /><img name= "p243" src="blnk.gif" width="16" height="4" /><img name= "p251" src="blnk.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p132" src="blnk.gif" width="16" height="4" /><img name= "p140" src="blnk.gif" width="16" height="4" /><img name= "p148" src="blnk.gif" width="16" height="4" /><img name= "p156" src="blnk.gif" width="16" height="4" /><img name= "p164" src="blnk.gif" width="16" height="4" /><img name= "p172" src="blnk.gif" width="16" height="4" /><img name= "p180" src="blnk.gif" width="16" height="4" /><img name= "p188" src="blnk.gif" width="16" height="4" /><img name= "p196" src="blnk.gif" width="16" height="4" /><img name= "p204" src="blnk.gif" width="16" height="4" /><img name= "p212" src="blnk.gif" width="16" height="4" /><img name= "p220" src="blnk.gif" width="16" height="4" /><img name= "p228" src="blnk.gif" width="16" height="4" /><img name= "p236" src="blnk.gif" width="16" height="4" /><img name= "p244" src="blnk.gif" width="16" height="4" /><img name= "p252" src="blnk.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p133" src="blnk.gif" width="16" height="4" /><img name= "p141" src="blnk.gif" width="16" height="4" /><img name= "p149" src="blnk.gif" width="16" height="4" /><img name= "p157" src="blnk.gif" width="16" height="4" /><img name= "p165" src="blnk.gif" width="16" height="4" /><img name= "p173" src="blnk.gif" width="16" height="4" /><img name= "p181" src="blnk.gif" width="16" height="4" /><img name= "p189" src="blnk.gif" width="16" height="4" /><img name= "p197" src="blnk.gif" width="16" height="4" /><img name= "p205" src="blnk.gif" width="16" height="4" /><img name= "p213" src="blnk.gif" width="16" height="4" /><img name= "p221" src="blnk.gif" width="16" height="4" /><img name= "p229" src="blnk.gif" width="16" height="4" /><img name= "p237" src="blnk.gif" width="16" height="4" /><img name= "p245" src="blnk.gif" width="16" height="4" /><img name= "p253" src="blnk.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p134" src="blnk.gif" width="16" height="4" /><img name= "p142" src="blnk.gif" width="16" height="4" /><img name= "p150" src="blnk.gif" width="16" height="4" /><img name= "p158" src="blnk.gif" width="16" height="4" /><img name= "p166" src="blnk.gif" width="16" height="4" /><img name= "p174" src="blnk.gif" width="16" height="4" /><img name= "p182" src="blnk.gif" width="16" height="4" /><img name= "p190" src="blnk.gif" width="16" height="4" /><img name= "p198" src="blnk.gif" width="16" height="4" /><img name= "p206" src="blnk.gif" width="16" height="4" /><img name= "p214" src="blnk.gif" width="16" height="4" /><img name= "p222" src="blnk.gif" width="16" height="4" /><img name= "p230" src="blnk.gif" width="16" height="4" /><img name= "p238" src="blnk.gif" width="16" height="4" /><img name= "p246" src="blnk.gif" width="16" height="4" /><img name= "p254" src="blnk.gif" width="16" height="4" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="16"><img name= "p135" src="blnk.gif" width="16" height="4" /><img name= "p143" src="blnk.gif" width="16" height="4" /><img name= "p151" src="blnk.gif" width="16" height="4" /><img name= "p159" src="blnk.gif" width="16" height="4" /><img name= "p167" src="blnk.gif" width="16" height="4" /><img name= "p175" src="blnk.gif" width="16" height="4" /><img name= "p183" src="blnk.gif" width="16" height="4" /><img name= "p191" src="blnk.gif" width="16" height="4" /><img name= "p199" src="blnk.gif" width="16" height="4" /><img name= "p207" src="blnk.gif" width="16" height="4" /><img name= "p215" src="blnk.gif" width="16" height="4" /><img name= "p223" src="blnk.gif" width="16" height="4" /><img name= "p231" src="blnk.gif" width="16" height="4" /><img name= "p239" src="blnk.gif" width="16" height="4" /><img name= "p247" src="blnk.gif" width="16" height="4" /><img name= "p255" src="blnk.gif" width="16" height="4" /></td>
+                                                </tr>
+                                      </table>                                        </td>
+                                    </tr>
+                          </table>                            </td>
+                        </tr>
+                        <tr> 
+                            <td align="center" valign="bottom"><img src="bottom.jpg" width="268" height="38" vspace="0" align="bottom" /></td>
+                        </tr>
+                    </table>
+                </td>
+                <td> 
+                    <table border="1" cellspacing="3" cellpadding="1" align="center" bordercolor="#FFFFFF">
+                        <tr align="center" valign="middle"> 
+                            <td> 
+                                <table border="0" cellspacing="1" cellpadding="3" align="center">
+                                    <tr align="center" valign="middle"> 
+                                        <td colspan="8"> 
+                                            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="-1"><b>CGRAM 
+                                                Viewer<br />
+                                                </b></font><font size="-1" face="Verdana, Arial, Helvetica, sans-serif"><b><i>ASCII 
+                                                Characters 0-7</i></b></font></div>
+                                        </td>
+                                    </tr>
+                                    <tr align="center" valign="bottom"> 
+                                        <td colspan="8" bgcolor="#00FF66"> 
+                                            <table border="0" cellspacing="0" cellpadding="0" align="center" vspace="0" hspace="0" width="256">
+                                                <tr bgcolor="#660099" align="center" valign="middle"> 
+                                                    <td height="16"> 
+                                                        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>0</b></font></div>
+                                                    </td>
+                                                    <td height="16"> 
+                                                        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>1</b></font></div>
+                                                    </td>
+                                                    <td height="16"> 
+                                                        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>2</b></font></div>
+                                                    </td>
+                                                    <td height="16"> 
+                                                        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>3</b></font></div>
+                                                    </td>
+                                                    <td height="16"> 
+                                                        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>4</b></font></div>
+                                                    </td>
+                                                    <td height="16"> 
+                                                        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>5</b></font></div>
+                                                    </td>
+                                                    <td height="16"> 
+                                                        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>6</b></font></div>
+                                                    </td>
+                                                    <td height="16"> 
+                                                        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>7</b></font></div>
+                                                    </td>
+                                                </tr>
+                                                <tr> 
+                                                    <td height="4" colspan="8"></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="8"><img name= "cgp0"   src="0.gif" width="32" height="8" /><img name= "cgp8"   src="0.gif" width="32" height="8" /><img name= "cgp16"  src="0.gif" width="32" height="8" /><img name= "cgp24"  src="0.gif" width="32" height="8" /><img name= "cgp32"  src="0.gif" width="32" height="8" /><img name= "cgp40"  src="0.gif" width="32" height="8" /><img name= "cgp48"  src="0.gif" width="32" height="8" /><img name= "cgp56"  src="0.gif" width="32" height="8" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="8"><img name= "cgp1"   src="0.gif" width="32" height="8" /><img name= "cgp9"   src="0.gif" width="32" height="8" /><img name= "cgp17"  src="0.gif" width="32" height="8" /><img name= "cgp25"  src="0.gif" width="32" height="8" /><img name= "cgp33"  src="0.gif" width="32" height="8" /><img name= "cgp41"  src="0.gif" width="32" height="8" /><img name= "cgp49"  src="0.gif" width="32" height="8" /><img name= "cgp57"  src="0.gif" width="32" height="8" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="8"><img name= "cgp2"   src="0.gif" width="32" height="8" /><img name= "cgp10"  src="0.gif" width="32" height="8" /><img name= "cgp18"  src="0.gif" width="32" height="8" /><img name= "cgp26"  src="0.gif" width="32" height="8" /><img name= "cgp34"  src="0.gif" width="32" height="8" /><img name= "cgp42"  src="0.gif" width="32" height="8" /><img name= "cgp50"  src="0.gif" width="32" height="8" /><img name= "cgp58"  src="0.gif" width="32" height="8" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="8"><img name= "cgp3"   src="0.gif" width="32" height="8" /><img name= "cgp11"  src="0.gif" width="32" height="8" /><img name= "cgp19"  src="0.gif" width="32" height="8" /><img name= "cgp27"  src="0.gif" width="32" height="8" /><img name= "cgp35"  src="0.gif" width="32" height="8" /><img name= "cgp43"  src="0.gif" width="32" height="8" /><img name= "cgp51"  src="0.gif" width="32" height="8" /><img name= "cgp59"  src="0.gif" width="32" height="8" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="8"><img name= "cgp4"   src="0.gif" width="32" height="8" /><img name= "cgp12"  src="0.gif" width="32" height="8" /><img name= "cgp20"  src="0.gif" width="32" height="8" /><img name= "cgp28"  src="0.gif" width="32" height="8" /><img name= "cgp36"  src="0.gif" width="32" height="8" /><img name= "cgp44"  src="0.gif" width="32" height="8" /><img name= "cgp52"  src="0.gif" width="32" height="8" /><img name= "cgp60"  src="0.gif" width="32" height="8" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="8"><img name= "cgp5"   src="0.gif" width="32" height="8" /><img name= "cgp13"  src="0.gif" width="32" height="8" /><img name= "cgp21"  src="0.gif" width="32" height="8" /><img name= "cgp29"  src="0.gif" width="32" height="8" /><img name= "cgp37"  src="0.gif" width="32" height="8" /><img name= "cgp45"  src="0.gif" width="32" height="8" /><img name= "cgp53"  src="0.gif" width="32" height="8" /><img name= "cgp61"  src="0.gif" width="32" height="8" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="8"><img name= "cgp6"   src="0.gif" width="32" height="8" /><img name= "cgp14"  src="0.gif" width="32" height="8" /><img name= "cgp22"  src="0.gif" width="32" height="8" /><img name= "cgp30"  src="0.gif" width="32" height="8" /><img name= "cgp38"  src="0.gif" width="32" height="8" /><img name= "cgp46"  src="0.gif" width="32" height="8" /><img name= "cgp54"  src="0.gif" width="32" height="8" /><img name= "cgp62"  src="0.gif" width="32" height="8" /></td>
+                                                </tr>
+                                                <tr> 
+                                                    <td colspan="8"><img name= "cgp7"   src="0.gif" width="32" height="8" /><img name= "cgp15"  src="0.gif" width="32" height="8" /><img name= "cgp23"  src="0.gif" width="32" height="8" /><img name= "cgp31"  src="0.gif" width="32" height="8" /><img name= "cgp39"  src="0.gif" width="32" height="8" /><img name= "cgp47"  src="0.gif" width="32" height="8" /><img name= "cgp55"  src="0.gif" width="32" height="8" /><img name= "cgp63"  src="0.gif" width="32" height="8" /></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table border="0" cellspacing="1" cellpadding="1" vspace="2" hspace="2" bordercolor="#006699">
+            <tr> 
+                <td bgcolor="#FFFFFF" align="left" rowspan="3" valign="top"><font size="1" face="Arial, Helvetica, sans-serif"><font color="#000099">L<br />
+                    C<br />
+                    D<br />
+                    </font></font></td>
+                <td bgcolor="#FFFFFF" align="left" rowspan="3" valign="bottom"><font size="1" face="Arial, Helvetica, sans-serif"><font color="#000099">S<br />
+                    T<br />
+                    A<br />
+                    T </font></font></td>
+                <td width="197" align="left" nowrap bgcolor="#003399"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;Display 
+                    is 
+                    <input type="text" name="D" size="5" maxlength="5" value="ON" style = "BACKGROUND-COLOR: #003399; COLOR: #000000; COLOR: #FFFFFF; border: 0px solid #000000;" />
+              </font></td>
+                <td width="210" align="left" nowrap bgcolor="#003366"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;Cursor 
+                    position is 
+                    <input type="text" name="ID" size="11" maxlength="11" value="increasing." style = "BACKGROUND-COLOR: #003366; COLOR: #000000; COLOR: #FFFFFF; border: 0px solid #000000;" />
+              </font></td>
+                <td width="189" align="left" nowrap bgcolor="#3300CC"><font size="2" face="Arial, Helvetica, sans-serif"> 
+                    &nbsp;Address Counter (AC): 
+                    <input type="text" name="AC" size="5" maxlength="5" style = "BACKGROUND-COLOR: #3300CC; COLOR: #000000; COLOR: #FFFFFF; border: 0px solid #000000;" value="0" />
+              </font></td>
+            </tr>
+            <tr> 
+                <td width="197" align="left" nowrap bgcolor="#003399"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;Cursor 
+                    is 
+                    <input type="text" name="C" size="14" maxlength="14" style = "BACKGROUND-COLOR: #003399; COLOR: #000000; COLOR: #FFFFFF; border: 0px solid #000000;" />
+              </font></td>
+                <td width="210" align="left" nowrap bgcolor="#003366"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;Display 
+                    scroll is 
+                    <input type="text" name="S" size="5" maxlength="5" value="OFF." style = "BACKGROUND-COLOR: #003366; COLOR: #000000; COLOR: #FFFFFF; border: 0px solid #000000;" />
+              </font></td>
+                <td width="189" align="left" nowrap bgcolor="#3300CC"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;AC 
+                    points to 
+                    <input type="text" name="lastAdrsSet" size="6" maxlength="6" value="DDRAM." style = "BACKGROUND-COLOR: #3300CC; COLOR: #000000; COLOR: #FFFFFF; border: 0px solid #000000;" />
+              </font></td>
+            </tr>
+            <tr> 
+                <td width="197" align="left" nowrap bgcolor="#0066CC"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;Cursor 
+                    position 
+                    <input type="text" name="cursOutOfDisp" size="13" maxlength="13" value="is visible." style = "BACKGROUND-COLOR: #0066CC; COLOR: #000000; COLOR: #FFFFFF; border: 0px solid #000000;" />
+              </font></td>
+                <td width="210" align="left" nowrap bgcolor="#006699"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;Line 
+                    1 addresses: 
+                    <input type="text" name="ln1adr" size="7" maxlength="7" value="--" style = "BACKGROUND-COLOR: #006699; COLOR: #000000; COLOR: #FFFFFF; border: 0px solid #000000;" />
+              </font></td>
+                <td width="189" align="left" nowrap bgcolor="#006699"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;Line 
+                    2 addresses: 
+                    <input type="text" name="ln2adr" size="7" maxlength="7" value="--" style = "BACKGROUND-COLOR: #006699; COLOR: #000000; COLOR: #FFFFFF; border: 0px solid #000000;" />
+              </font></td>
+            </tr>
+        </table>
+        <table border="0" cellspacing="0" cellpadding="2" bgcolor="#CC3333" vspace="2" hspace="2">
+            <tr align="center" valign="middle"> 
+                <td bgcolor="#CC3333"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D7</b></font></div>
+                </td>
+                <td bgcolor="#CC3333"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D6</b></font></div>
+                </td>
+                <td bgcolor="#CC3333"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D5</b></font></div>
+                </td>
+                <td bgcolor="#CC3333"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D4</b></font></div>
+                </td>
+                <td bgcolor="#CC3333"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D3</b></font></div>
+                </td>
+                <td bgcolor="#CC3333"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D2</b></font></div>
+                </td>
+                <td bgcolor="#CC3333"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D1</b></font></div>
+                </td>
+                <td bgcolor="#CC3333"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>D0</b></font></div>
+                </td>
+                <td bgcolor="#336633"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>E</b></font></div>
+                </td>
+                <td bgcolor="#336633"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>R/W</b></font></div>
+                </td>
+                <td bgcolor="#336633"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif"><b>RS</b></font></div>
+                </td>
+            </tr>
+            <tr align="center" valign="middle"> 
+                <td bgcolor="#CC3333"><a href="javascript: togImage('d7')"><img name= "d7" src="b0u.gif" width="34" height="34" border="0" /></a></td>
+                <td bgcolor="#CC3333"><a href="javascript: togImage('d6')"><img name= "d6"  src="b0u.gif" width="34" height="34" border="0" /></a></td>
+                <td bgcolor="#CC3333"><a href="javascript: togImage('d5')"><img name= "d5" src="b0u.gif" width="34" height="34" border="0" /></a></td>
+                <td bgcolor="#CC3333"><a href="javascript: togImage('d4')"><img name= "d4" src="b0u.gif" width="34" height="34" border="0" /></a></td>
+                <td bgcolor="#CC3333"><a href="javascript: togImage('d3')"><img name= "d3" src="b0u.gif" width="34" height="34" border="0" /></a></td>
+                <td bgcolor="#CC3333"><a href="javascript: togImage('d2')"><img name= "d2" src="b0u.gif" width="34" height="34" border="0" /></a></td>
+                <td bgcolor="#CC3333"><a href="javascript: togImage('d1')"><img name= "d1" src="b0u.gif" width="34" height="34" border="0" /></a></td>
+                <td bgcolor="#CC3333"><a href="javascript: togImage('d0')"><img name= "d0" src="b0u.gif" width="34" height="34" border="0" /></a></td>
+                <td bgcolor="#336633"> 
+                    <div align="center"><a href="javascript: togImageC('e')"><img name= "e"  src="b0gu.gif" width="34" height="34" border="0" /></a></div>
+                </td>
+                <td bgcolor="#336633"> 
+                    <div align="center"><a href="javascript: togImageC('rw')"><img name= "rw"  src="b0gu.gif" width="34" height="34" border="0" /></a></div>
+                </td>
+                <td bgcolor="#336633"> 
+                    <div align="center"><a href="javascript: togImageC('rs')"><img name= "rs"  src="b0gu.gif" border="0" width="34" height="34" /></a></div>
+                </td>
+            </tr>
+            <tr align="center" valign="middle" bgcolor="#990033"> 
+                <td align="left" colspan="7" valign="middle"> 
+                    <div align="right"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif" size="2">Hex: 
+                        </font> <font size="2"> </font><font face="Arial, Helvetica, sans-serif"><font size="2"><font face="Arial, Helvetica, sans-serif"> 
+                        <input type="text" name="lcdpinsHex" size="4" value="0" onKeyUp="inpChanged('hex')" onChange="inpChanged('hex')" maxlength="4" style = "BACKGROUND-COLOR: #CC3333; COLOR: #000000; COLOR: #FFFFFF;" />
+                        </font></font></font><font size="2"> Dec: </font><font face="Arial, Helvetica, sans-serif"><font size="2"><font face="Arial, Helvetica, sans-serif"> 
+                        <input type="text" name="lcdpinsDec" size="4" value="0" onKeyUp="inpChanged('dec')" onChange="inpChanged('hex')" maxlength="4" style = "BACKGROUND-COLOR: #CC3333; COLOR: #000000; COLOR: #FFFFFF;" />
+                        </font></font></font><font size="2"> Pixel: <font face="Verdana, Arial, Helvetica, sans-serif" color="#99FFFF"><img name= "cgpixels" img src="0.gif" width="32" height="8" align="baseline" /> 
+                        Char:</font><font face="Arial, Helvetica, sans-serif"><font size="2">
+                        <input name="lcdpinsChar" type="text" id="lcdpinsChar" style="background-color: rgb(204, 51, 51); color: rgb(255, 255, 255);" onChange="inpChanged('chr')" onKeyUp="inpChanged('chr')" size="2" maxlength="2">
+                        </font></font></font></font> </div>
+                </td>
+                <td align="left" valign="middle"> 
+                    <table border="0" cellspacing="0" cellpadding="0" align="center">
+                        <tr> 
+                            <td><img name= "cprv0"   src="0.gif" width="16" height="4" /></td>
+                        </tr>
+                        <tr> 
+                            <td><img name= "cprv1"   src="0.gif" width="16" height="4" /></td>
+                        </tr>
+                        <tr> 
+                            <td><img name= "cprv2"   src="0.gif" width="16" height="4" /></td>
+                        </tr>
+                        <tr> 
+                            <td><img name= "cprv3"   src="0.gif" width="16" height="4" /></td>
+                        </tr>
+                        <tr> 
+                            <td><img name= "cprv4"   src="0.gif" width="16" height="4" /></td>
+                        </tr>
+                        <tr> 
+                            <td><img name= "cprv5"   src="0.gif" width="16" height="4" /></td>
+                        </tr>
+                        <tr> 
+                            <td><img name= "cprv6"   src="0.gif" width="16" height="4" /></td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="3" bgcolor="#666600"> 
+                    <div align="center"><font face="Arial, Helvetica, sans-serif" size="-1"> 
+                        <input type="text" name="ctrlpins" size="26" maxlength="26" style = "BACKGROUND-COLOR: #666600; COLOR: #000000; COLOR: #FFFFFF; border: 0px solid #000000;" />
+                        </font></div>
+                </td>
+            </tr>
+        </table>
+        <table border="1" cellspacing="1" cellpadding="1" bordercolor="#FFFFFF" vspace="2" hspace="2">
+            <tr> 
+                <td align="left" valign="top"> 
+                    <p align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">T<br />
+                        I<br />
+                        P<br />
+                        </font></p>
+                    <p align="center">&nbsp;</p>
+                </td>
+                <td align="left" valign="bottom"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">B<br />
+                    O<br />
+                    X </font></td>
+                <td align="center" valign="middle"><font face="MS Sans Serif"> 
+                    <textarea name="outpMsgs" wrap="VIRTUAL" cols="63" rows="4">DjLCDSIM is script simulating a 2*16 character type LCD with a HD44780 controller. All instructions but read data / busy flag are supported. The aim is to help people trying to learn how to use such displays. DjLCDSIM requires a Javascript 1.2 capable browser. It runs fine on Opera 5.12 (for Windows), Netscape 4.76 (Windows &amp; Linux), and MS Internet Explorer 4 or above. 
+DjLCDSIM is provided as is, without warranty of any kind, expressed or implied. Use it at your own risk! - The author can't in any way be held responsible for eventual damage caused directly or indirectly by this program. It is strongly suggested that you save any unsaved work you may have before attempting to use this script.</textarea>
+                    </font></td>
+            </tr>
+        </table>
+        <br />
+        <table border="1" cellspacing="1" cellpadding="1" bordercolor="#FFFFFF" vspace="0" hspace="0">
+            <tr> 
+                <td rowspan="2" align="left" valign="top"> 
+                    <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">S<br />
+                        C<br />
+                        R<br />
+                        I<br />
+                        P<br />
+                        T </font></p>
+                </td>
+                <td rowspan="2" align="left" valign="bottom"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">B<br />
+                    O<br />
+                    X </font></td>
+                <td align="center" valign="middle"> 
+                    <select name="scriptSelect" onChange="scripter(this.options[this.selectedIndex].value)">
+                        <option selected>Choose script</option>
+                        <option value="defCustChr">Define Custom Characters</option>
+                        <option value="odometer">Odometer</option>
+                    </select>
+                    <input type="button" name="Button3" value="Run script"onClick="evaluator();" />
+                    <input type="button" name="Button2" value="Clear " onClick="document.ctrl.scriptBox.value = ''" />
+                </td>
+            </tr>
+            <tr> 
+                <td align="center" valign="middle"><font face="MS Sans Serif"> 
+                    <textarea name="scriptBox" cols="66" rows="5" wrap="VIRTUAL">Using the script box, it's possible to control the LCD without using the buttons above. Provided are some functions to send the LCD instructions and data so that it's easier to experiment with. These can be combined with JavaScript experssions if needed. Here are the functions:
+instr(instructionCode) // sends instruction
+data(caharacterCode) // sends data
+mcl(x_times) // move cusror left
+mcr(x_times) // move cursor right
+sdl(x_times) // shift display left
+sdr(x_times) // shift display right
+DDRadrs(address) // set DDRAM address
+CGRadrs(address) // set CGRAM address
+putstr('string') // print string
+
+There is also a  script to define some custom characters.
+The odometer script runs only with Opera 5.12 on Windows. It may run on Netscape, but the browser may crash.
+</textarea>
+                    </font></td>
+            </tr>
+        </table>
+    </div>
+</form>
+<p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">If 
+    you want to use DjLCDSIM off-line, <a href="djlcdsim1.zip">click here to download 
+    it.</a><br />
+    <a href="djlcdsim_feedback.html">Fill a feedback form</a> if you wish to share 
+    your opinion about DjLCDSIM with me.<br />
+    </font> </p>
+<p align="center"></p>
+    
+<p align="center"><font color="#CCFFFF" face="Arial, Helvetica, sans-serif" size="-1"><b>Copyright 
+    &copy; 2001-2003 <a href="mailto:dinceraydin@gmx.net"><font color="#FFFFFF">Dincer 
+    Aydin</font></a></b></font> 
+</p><hr width="60%" align="center" />
+    <div align="center"> 
+        <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> <a href="../pic/index.html"> 
+            </a>Navigate through the rest of my site:<br />
+            <a href="../pic/index.html"> [PIC]</a> <a href="../z80/index.html">[Z80]</a> 
+            <a href="../8051/index.html">[8051]</a> <a href="../lcd/index.html">[LCD]</a> 
+            <a href="../books.htm">[Bookstore]</a> <a href="../opera.htm">[Opera]</a> 
+            <br />
+            <a href="../soft.htm">[Software]</a> <a href="../files/index.html">[Files]</a> 
+            <a href="../links.htm">[Links]</a> <a href="../me.htm">[About Me]</a> 
+            </font></p>
+    </div>
+    <p></p>
+    <p>
+</div>
+</p></body>
+</html>

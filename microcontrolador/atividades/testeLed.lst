@@ -1,0 +1,366 @@
+CCS PCM C Compiler, Version 4.104, 5967               06-fev-24 13:43
+
+               Filename: C:\Users\IFMT\OneDrive\Faculdade\microcontrolador\atividades\testeLed.lst
+
+               ROM used: 241 words (3%)
+                         Largest free fragment is 2048
+               RAM used: 6 (2%) at main() level
+                         7 (2%) worst case
+               Stack:    2 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   08B
+0003:  NOP
+.................... #include <16F877A.h> 
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+.................... #list 
+....................  
+.................... #device adc=8 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES HS                       //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... #FUSES NOPUT                    //No Power Up Timer 
+.................... #FUSES NOPROTECT                //Code not protected from reading 
+.................... #FUSES NODEBUG                  //No Debug mode for ICD 
+.................... #FUSES BROWNOUT                 //Reset when brownout detected 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOCPD                    //No EE protection 
+.................... #FUSES NOWRT                    //Program memory not write protected 
+....................                 //Used to set the reserved FUSE bits 
+....................  
+.................... #use delay(clock=6000000) 
+0004:  MOVLW  22
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   018
+000A:  MOVLW  01
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  F1
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  NOP
+0016:  DECFSZ 00,F
+0017:  GOTO   00A
+0018:  RETURN
+....................  
+....................  
+.................... void notaDo(); 
+.................... void notaRE(); 
+.................... void notaMI(); 
+.................... void notaFA(); 
+....................  
+.................... void main(void) { 
+*
+008B:  CLRF   04
+008C:  BCF    03.7
+008D:  MOVLW  1F
+008E:  ANDWF  03,F
+008F:  BSF    03.5
+0090:  BSF    1F.0
+0091:  BSF    1F.1
+0092:  BSF    1F.2
+0093:  BCF    1F.3
+0094:  MOVLW  07
+0095:  MOVWF  1C
+....................  
+....................     while(1) { 
+....................      
+....................       delay_ms(1000); 
+0096:  MOVLW  04
+0097:  BCF    03.5
+0098:  MOVWF  21
+0099:  MOVLW  FA
+009A:  MOVWF  22
+009B:  CALL   004
+009C:  DECFSZ 21,F
+009D:  GOTO   099
+....................       notaDO(); 
+009E:  CALL   019
+....................       delay_ms(300); 
+009F:  MOVLW  02
+00A0:  MOVWF  21
+00A1:  MOVLW  96
+00A2:  MOVWF  22
+00A3:  CALL   004
+00A4:  DECFSZ 21,F
+00A5:  GOTO   0A1
+....................       notaRE(); 
+00A6:  CALL   029
+....................       delay_ms(300); 
+00A7:  MOVLW  02
+00A8:  MOVWF  21
+00A9:  MOVLW  96
+00AA:  MOVWF  22
+00AB:  CALL   004
+00AC:  DECFSZ 21,F
+00AD:  GOTO   0A9
+....................       notaMI(); 
+00AE:  GOTO   041
+....................       delay_ms(300); 
+00AF:  MOVLW  02
+00B0:  MOVWF  21
+00B1:  MOVLW  96
+00B2:  MOVWF  22
+00B3:  CALL   004
+00B4:  DECFSZ 21,F
+00B5:  GOTO   0B1
+....................       notaFA(); 
+00B6:  CALL   063
+....................       delay_ms(100); 
+00B7:  MOVLW  64
+00B8:  MOVWF  22
+00B9:  CALL   004
+....................       notaFA(); 
+00BA:  CALL   063
+....................       delay_ms(100); 
+00BB:  MOVLW  64
+00BC:  MOVWF  22
+00BD:  CALL   004
+....................       notaFA(); 
+00BE:  CALL   063
+....................       delay_ms(100); 
+00BF:  MOVLW  64
+00C0:  MOVWF  22
+00C1:  CALL   004
+....................       notaFA(); 
+00C2:  CALL   063
+....................        
+....................       delay_ms(1000); 
+00C3:  MOVLW  04
+00C4:  MOVWF  21
+00C5:  MOVLW  FA
+00C6:  MOVWF  22
+00C7:  CALL   004
+00C8:  DECFSZ 21,F
+00C9:  GOTO   0C5
+....................        
+....................       // segunda parte 
+....................        
+....................       notaDO(); 
+00CA:  CALL   019
+....................       delay_ms(300); 
+00CB:  MOVLW  02
+00CC:  MOVWF  21
+00CD:  MOVLW  96
+00CE:  MOVWF  22
+00CF:  CALL   004
+00D0:  DECFSZ 21,F
+00D1:  GOTO   0CD
+....................       notaRE(); 
+00D2:  CALL   029
+....................       delay_ms(300); 
+00D3:  MOVLW  02
+00D4:  MOVWF  21
+00D5:  MOVLW  96
+00D6:  MOVWF  22
+00D7:  CALL   004
+00D8:  DECFSZ 21,F
+00D9:  GOTO   0D5
+....................       notaDO(); 
+00DA:  CALL   019
+....................       delay_ms(300); 
+00DB:  MOVLW  02
+00DC:  MOVWF  21
+00DD:  MOVLW  96
+00DE:  MOVWF  22
+00DF:  CALL   004
+00E0:  DECFSZ 21,F
+00E1:  GOTO   0DD
+....................       notaRE(); 
+00E2:  CALL   029
+....................       delay_ms(100); 
+00E3:  MOVLW  64
+00E4:  MOVWF  22
+00E5:  CALL   004
+....................       notaRE(); 
+00E6:  CALL   029
+....................       delay_ms(100); 
+00E7:  MOVLW  64
+00E8:  MOVWF  22
+00E9:  CALL   004
+....................       notaRE(); 
+00EA:  CALL   029
+....................       delay_ms(100); 
+00EB:  MOVLW  64
+00EC:  MOVWF  22
+00ED:  CALL   004
+....................        
+....................        
+....................     } 
+00EE:  BSF    03.5
+00EF:  GOTO   096
+.................... } 
+....................      
+....................    void notaDo(){ 
+....................     
+00F0:  SLEEP
+....................       // DO D3=L4 
+....................         output_high(PIN_D3);   
+*
+0019:  BSF    03.5
+001A:  BCF    08.3
+001B:  BCF    03.5
+001C:  BSF    08.3
+....................         delay_ms(500);          
+001D:  MOVLW  02
+001E:  MOVWF  21
+001F:  MOVLW  FA
+0020:  MOVWF  22
+0021:  CALL   004
+0022:  DECFSZ 21,F
+0023:  GOTO   01F
+....................         output_low(PIN_D3);   
+0024:  BSF    03.5
+0025:  BCF    08.3
+0026:  BCF    03.5
+0027:  BCF    08.3
+....................  
+....................    } 
+0028:  RETURN
+....................     
+....................    void notaRE(){ 
+....................       // RE D3, D4 = L4, L5 
+....................         output_high(PIN_D3);  
+0029:  BSF    03.5
+002A:  BCF    08.3
+002B:  BCF    03.5
+002C:  BSF    08.3
+....................         output_high(PIN_D4); 
+002D:  BSF    03.5
+002E:  BCF    08.4
+002F:  BCF    03.5
+0030:  BSF    08.4
+....................         delay_ms(500);          
+0031:  MOVLW  02
+0032:  MOVWF  21
+0033:  MOVLW  FA
+0034:  MOVWF  22
+0035:  CALL   004
+0036:  DECFSZ 21,F
+0037:  GOTO   033
+....................         output_low(PIN_D3); 
+0038:  BSF    03.5
+0039:  BCF    08.3
+003A:  BCF    03.5
+003B:  BCF    08.3
+....................         output_low(PIN_D4); 
+003C:  BSF    03.5
+003D:  BCF    08.4
+003E:  BCF    03.5
+003F:  BCF    08.4
+....................    } 
+0040:  RETURN
+....................     
+....................    void notaMI(){ 
+....................        // MI D3, D4, D5 = L4, L5, L6 
+....................         output_high(PIN_D3);  
+0041:  BSF    03.5
+0042:  BCF    08.3
+0043:  BCF    03.5
+0044:  BSF    08.3
+....................         output_high(PIN_D4); 
+0045:  BSF    03.5
+0046:  BCF    08.4
+0047:  BCF    03.5
+0048:  BSF    08.4
+....................         output_high(PIN_D5); 
+0049:  BSF    03.5
+004A:  BCF    08.5
+004B:  BCF    03.5
+004C:  BSF    08.5
+....................         delay_ms(500);          
+004D:  MOVLW  02
+004E:  MOVWF  21
+004F:  MOVLW  FA
+0050:  MOVWF  22
+0051:  CALL   004
+0052:  DECFSZ 21,F
+0053:  GOTO   04F
+....................         output_low(PIN_D3); 
+0054:  BSF    03.5
+0055:  BCF    08.3
+0056:  BCF    03.5
+0057:  BCF    08.3
+....................         output_low(PIN_D4); 
+0058:  BSF    03.5
+0059:  BCF    08.4
+005A:  BCF    03.5
+005B:  BCF    08.4
+....................         output_low(PIN_D5); 
+005C:  BSF    03.5
+005D:  BCF    08.5
+005E:  BCF    03.5
+005F:  BCF    08.5
+....................     
+....................    } 
+0060:  BCF    0A.3
+0061:  BCF    0A.4
+0062:  GOTO   0AF (RETURN)
+....................     
+....................    void notaFA(){ 
+....................       // FA D3, D4, D5, D6 = L4, L5, L6, L7 
+....................         output_high(PIN_D3);  
+0063:  BSF    03.5
+0064:  BCF    08.3
+0065:  BCF    03.5
+0066:  BSF    08.3
+....................         output_high(PIN_D4); 
+0067:  BSF    03.5
+0068:  BCF    08.4
+0069:  BCF    03.5
+006A:  BSF    08.4
+....................         output_high(PIN_D5); 
+006B:  BSF    03.5
+006C:  BCF    08.5
+006D:  BCF    03.5
+006E:  BSF    08.5
+....................         output_high(PIN_D6); 
+006F:  BSF    03.5
+0070:  BCF    08.6
+0071:  BCF    03.5
+0072:  BSF    08.6
+....................         delay_ms(500);          
+0073:  MOVLW  02
+0074:  MOVWF  21
+0075:  MOVLW  FA
+0076:  MOVWF  22
+0077:  CALL   004
+0078:  DECFSZ 21,F
+0079:  GOTO   075
+....................         output_low(PIN_D3); 
+007A:  BSF    03.5
+007B:  BCF    08.3
+007C:  BCF    03.5
+007D:  BCF    08.3
+....................         output_low(PIN_D4); 
+007E:  BSF    03.5
+007F:  BCF    08.4
+0080:  BCF    03.5
+0081:  BCF    08.4
+....................         output_low(PIN_D5); 
+0082:  BSF    03.5
+0083:  BCF    08.5
+0084:  BCF    03.5
+0085:  BCF    08.5
+....................         output_low(PIN_D6); 
+0086:  BSF    03.5
+0087:  BCF    08.6
+0088:  BCF    03.5
+0089:  BCF    08.6
+....................    } 
+008A:  RETURN
+....................  
+
+Configuration Fuses:
+   Word  1: 3F7A   HS NOWDT NOPUT NODEBUG NOPROTECT BROWNOUT NOLVP NOCPD NOWRT
