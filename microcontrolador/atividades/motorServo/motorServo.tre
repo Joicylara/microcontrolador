@@ -1,0 +1,32 @@
+ÀÄmotorServo
+   ÀÄMAIN  0/120  Ram=1
+      ÃÄ??0??
+      ÃÄRotation0  0/31  Ram=2
+      ³  ÃÄ@delay_us1  0/15  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÀÄ@delay_us1  0/15  Ram=1
+      ÃÄ@delay_ms1  0/20  Ram=1
+      ÃÄRotation90  0/38  Ram=2
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@delay_us1  0/15  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÀÄ@delay_us1  0/15  Ram=1
+      ÃÄ@delay_ms1  0/20  Ram=1
+      ÃÄRotation180  0/34  Ram=2
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@delay_us1  0/15  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÀÄ@delay_us1  0/15  Ram=1
+      ÃÄ@delay_ms1  0/20  Ram=1
+      ÃÄRotation45  0/34  Ram=2
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@delay_us1  0/15  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÀÄ@delay_us1  0/15  Ram=1
+      ÃÄ@delay_ms1  0/20  Ram=1
+      ÃÄRotation75  0/38  Ram=2
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@delay_us1  0/15  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÀÄ@delay_us1  0/15  Ram=1
+      ÀÄ@delay_ms1  0/20  Ram=1

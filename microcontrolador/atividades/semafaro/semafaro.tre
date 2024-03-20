@@ -1,0 +1,14 @@
+ÀÄsemafaro
+   ÀÄmain  0/111  Ram=1
+      ÃÄ??0??
+      ÃÄpasso1  0/11  Ram=0
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÃÄpasso3  0/22  Ram=1
+      ³  ÀÄ@delay_ms1  0/21  Ram=1
+      ÃÄpasso4  0/26  Ram=1
+      ³  ÀÄ@delay_ms1  0/21  Ram=1
+      ÃÄpasso5  0/51  Ram=2
+      ³  ÃÄ@delay_ms1  0/21  Ram=1
+      ³  ÃÄ@delay_ms1  0/21  Ram=1
+      ³  ÀÄ@delay_ms1  0/21  Ram=1
+      ÀÄ@delay_ms1  0/21  Ram=1

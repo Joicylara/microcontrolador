@@ -1,0 +1,121 @@
+ÀÄLCD_via_I2C_18F4680
+   ÀÄMAIN  0/606  Ram=2
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄlcd_init  0/196  Ram=5
+      ³  ÃÄ@delay_ms1  0/40  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ³  ÃÄi2c_send_nibble  0/160  Ram=3
+      ³  ³  ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ³  ³  ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ³  ³  ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ³  ³  ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ³  ³  ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ³  ³  ÀÄ@I2C_WRITE_1  0/108  Ram=1
+      ³  ÃÄ@delay_ms1  0/40  Ram=1
+      ³  ÃÄi2c_send_nibble  0/160  Ram=3
+      ³  ³  ÀÄ*
+      ³  ÃÄ@delay_ms1  0/40  Ram=1
+      ³  ÃÄi2c_send_nibble  0/160  Ram=3
+      ³  ³  ÀÄ*
+      ³  ÃÄ@delay_ms1  0/40  Ram=1
+      ³  ÃÄ@const691  0/20  Ram=0
+      ³  ÃÄlcd_send_byte  0/108  Ram=3
+      ³  ³  ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ³  ³  ÃÄi2c_send_nibble  0/160  Ram=3
+      ³  ³  ³  ÀÄ*
+      ³  ³  ÀÄi2c_send_nibble  0/160  Ram=3
+      ³  ³     ÀÄ*
+      ³  ÃÄ@delay_ms1  0/40  Ram=1
+      ³  ÀÄlcd_clear  0/20  Ram=0
+      ³     ÃÄlcd_send_byte  0/108  Ram=3
+      ³     ³  ÀÄ*
+      ³     ÀÄ@delay_ms1  0/40  Ram=1
+      ÃÄlcd_backlight_led  0/14  Ram=1
+      ÃÄlcd_clear  0/20  Ram=0
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄLCD_PUTC  0/66  Ram=1
+      ³     ÃÄlcd_clear  0/20  Ram=0
+      ³     ³  ÀÄ*
+      ³     ÃÄlcd_gotoxy  0/98  Ram=7
+      ³     ³  ÀÄlcd_send_byte  0/108  Ram=3
+      ³     ³     ÀÄ*
+      ³     ÃÄlcd_send_byte  0/108  Ram=3
+      ³     ³  ÀÄ*
+      ³     ÀÄlcd_send_byte  0/108  Ram=3
+      ³        ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄLCD_PUTC  0/66  Ram=1
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄlcd_gotoxy  0/98  Ram=7
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄlcd_gotoxy  0/98  Ram=7
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄlcd_gotoxy  0/98  Ram=7
+      ³  ÀÄ*
+      ÃÄLCD_PUTC  0/66  Ram=1
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄlcd_gotoxy  0/98  Ram=7
+      ³  ÀÄ*
+      ÃÄLCD_PUTC  0/66  Ram=1
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄlcd_gotoxy  0/98  Ram=7
+      ³  ÀÄ*
+      ÃÄLCD_PUTC  0/66  Ram=1
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄlcd_gotoxy  0/98  Ram=7
+      ³  ÀÄ*
+      ÃÄLCD_PUTC  0/66  Ram=1
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄlcd_gotoxy  0/98  Ram=7
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄlcd_backlight_led  0/14  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄlcd_backlight_led  0/14  Ram=1
+      ÃÄ@PSTRINGC_701  0/32  Ram=2
+      ³  ÀÄ*
+      ÀÄ@delay_ms1  0/40  Ram=1

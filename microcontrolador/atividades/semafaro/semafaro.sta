@@ -1,0 +1,50 @@
+
+ROM used: 246 (3%)
+          246 (3%) including unused fragments
+
+          1 Average locations per line
+          6 Average locations per statement
+
+RAM used: 7 (2%) at main() level
+          9 (2%) worst case
+
+Stack used: 2 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  117    43 100  semafaro.c
+  326     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+----- -----
+  443    43 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   9   1             @delay_ms1
+0    111  45   1   458  3.8  main
+0     11   4   0    32  1.0  passo1
+0     22   9   1    67  1.2  passo3
+0     26  11   1    86  1.3  passo4
+0     51  21   2   275  3.2  passo5
+
+Program metrics:
+    Functions               5
+    Statements              43
+    Comments                105
+    Volume (V)              1287
+    Difficilty (D)          10.6
+    Effort to implement (E) 13637
+    Time to implement (T)   13 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   2
+    Maintainability (MI)    144
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   242  1802  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

@@ -1,0 +1,27 @@
+#include "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\timer\timer.h"
+#int_RTCC
+void  RTCC_isr(void) 
+{
+
+}
+
+
+
+void main()
+{
+
+   setup_adc_ports(NO_ANALOGS);
+   setup_adc(ADC_CLOCK_DIV_2);
+   setup_psp(PSP_DISABLED);
+   setup_spi(SPI_SS_DISABLED);
+   setup_timer_0(RTCC_INTERNAL|RTCC_DIV_16);
+   setup_timer_1(T1_DISABLED);
+   setup_timer_2(T2_DISABLED,0,1);
+   setup_comparator(NC_NC_NC_NC);
+   setup_vref(FALSE);
+   enable_interrupts(INT_RTCC);
+   enable_interrupts(GLOBAL);
+
+   // TODO: USER CODE!!
+
+}

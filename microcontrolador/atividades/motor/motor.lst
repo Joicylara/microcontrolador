@@ -1,0 +1,322 @@
+CCS PCM C Compiler, Version 4.104, 5967               12-mar-24 20:03
+
+               Filename: C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\motor\motor.lst
+
+               ROM used: 295 words (4%)
+                         Largest free fragment is 2048
+               RAM used: 22 (6%) at main() level
+                         30 (8%) worst case
+               Stack:    2 worst case (1 in main + 1 for interrupts)
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   088
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   0A,W
+0009:  MOVWF  20
+000A:  CLRF   0A
+000B:  MOVF   04,W
+000C:  MOVWF  22
+000D:  MOVF   77,W
+000E:  MOVWF  23
+000F:  MOVF   78,W
+0010:  MOVWF  24
+0011:  MOVF   79,W
+0012:  MOVWF  25
+0013:  MOVF   7A,W
+0014:  MOVWF  26
+0015:  BCF    03.7
+0016:  BCF    03.5
+0017:  BTFSS  0B.4
+0018:  GOTO   01B
+0019:  BTFSC  0B.1
+001A:  GOTO   02C
+001B:  MOVF   22,W
+001C:  MOVWF  04
+001D:  MOVF   23,W
+001E:  MOVWF  77
+001F:  MOVF   24,W
+0020:  MOVWF  78
+0021:  MOVF   25,W
+0022:  MOVWF  79
+0023:  MOVF   26,W
+0024:  MOVWF  7A
+0025:  MOVF   20,W
+0026:  MOVWF  0A
+0027:  SWAPF  21,W
+0028:  MOVWF  03
+0029:  SWAPF  7F,F
+002A:  SWAPF  7F,W
+002B:  RETFIE
+002C:  BCF    0A.3
+002D:  BCF    0A.4
+002E:  GOTO   02F
+.................... //#include "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\motor\motor.h" 
+....................  
+.................... #include <16F877A.h> 
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+.................... #list 
+....................  
+.................... #device adc=8 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES HS                       //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... #FUSES NOPUT                    //No Power Up Timer 
+.................... #FUSES NOPROTECT                //Code not protected from reading 
+.................... #FUSES NODEBUG                  //No Debug mode for ICD 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOCPD                    //No EE protection 
+.................... #FUSES NOWRT                    //Program memory not write protected 
+.................... #FUSES RESERVED                 //Used to set the reserved FUSE bits 
+....................  
+.................... #use delay(clock=20000000) 
+*
+0074:  MOVLW  33
+0075:  MOVWF  04
+0076:  BCF    03.7
+0077:  MOVF   00,W
+0078:  BTFSC  03.2
+0079:  GOTO   087
+007A:  MOVLW  06
+007B:  MOVWF  78
+007C:  CLRF   77
+007D:  DECFSZ 77,F
+007E:  GOTO   07D
+007F:  DECFSZ 78,F
+0080:  GOTO   07C
+0081:  MOVLW  7B
+0082:  MOVWF  77
+0083:  DECFSZ 77,F
+0084:  GOTO   083
+0085:  DECFSZ 00,F
+0086:  GOTO   07A
+0087:  RETURN
+....................  
+....................  
+.................... signed int8 incr = 1; 
+....................  
+.................... #int_EXT 
+.................... void  EXT_isr(void)  
+.................... { 
+....................    incr = incr * (-1); 
+*
+002F:  MOVF   27,W
+0030:  MOVWF  37
+0031:  MOVLW  FF
+0032:  MOVWF  38
+*
+0057:  MOVF   78,W
+0058:  MOVWF  27
+.................... } 
+....................  
+0059:  BCF    0B.1
+005A:  BCF    0A.3
+005B:  BCF    0A.4
+005C:  GOTO   01B
+.................... unsigned int8 posicao[4] =  {1, 2, 4, 8}; 
+*
+0096:  MOVLW  01
+0097:  BCF    03.5
+0098:  MOVWF  28
+0099:  MOVLW  02
+009A:  MOVWF  29
+009B:  MOVLW  04
+009C:  MOVWF  2A
+009D:  MOVLW  08
+009E:  MOVWF  2B
+.................... signed int8 passo = 0; 
+.................... unsigned int16 valor_p; 
+....................   
+....................  
+.................... void main() 
+.................... { 
+*
+0088:  CLRF   04
+0089:  BCF    03.7
+008A:  MOVLW  1F
+008B:  ANDWF  03,F
+008C:  MOVLW  01
+008D:  MOVWF  27
+008E:  CLRF   2C
+008F:  BSF    03.5
+0090:  BSF    1F.0
+0091:  BSF    1F.1
+0092:  BSF    1F.2
+0093:  BCF    1F.3
+0094:  MOVLW  07
+0095:  MOVWF  1C
+....................  
+....................    setup_adc_ports(AN0); 
+*
+00A1:  BSF    03.5
+00A2:  BCF    1F.0
+00A3:  BSF    1F.1
+00A4:  BSF    1F.2
+00A5:  BSF    1F.3
+....................    setup_adc(ADC_CLOCK_DIV_2); 
+00A6:  BCF    1F.6
+00A7:  BCF    03.5
+00A8:  BCF    1F.6
+00A9:  BCF    1F.7
+00AA:  BSF    03.5
+00AB:  BCF    1F.7
+00AC:  BCF    03.5
+00AD:  BSF    1F.0
+....................    setup_psp(PSP_DISABLED); 
+00AE:  BSF    03.5
+00AF:  BCF    09.4
+....................    setup_spi(SPI_SS_DISABLED); 
+00B0:  BCF    03.5
+00B1:  BCF    14.5
+00B2:  BCF    2F.5
+00B3:  MOVF   2F,W
+00B4:  BSF    03.5
+00B5:  MOVWF  07
+00B6:  BCF    03.5
+00B7:  BSF    2F.4
+00B8:  MOVF   2F,W
+00B9:  BSF    03.5
+00BA:  MOVWF  07
+00BB:  BCF    03.5
+00BC:  BCF    2F.3
+00BD:  MOVF   2F,W
+00BE:  BSF    03.5
+00BF:  MOVWF  07
+00C0:  MOVLW  01
+00C1:  BCF    03.5
+00C2:  MOVWF  14
+00C3:  MOVLW  00
+00C4:  BSF    03.5
+00C5:  MOVWF  14
+....................    setup_timer_0(RTCC_INTERNAL|RTCC_DIV_1); 
+00C6:  MOVF   01,W
+00C7:  ANDLW  C7
+00C8:  IORLW  08
+00C9:  MOVWF  01
+....................    setup_timer_1(T1_DISABLED); 
+00CA:  BCF    03.5
+00CB:  CLRF   10
+....................    setup_timer_2(T2_DISABLED,0,1); 
+00CC:  MOVLW  00
+00CD:  MOVWF  78
+00CE:  MOVWF  12
+00CF:  MOVLW  00
+00D0:  BSF    03.5
+00D1:  MOVWF  12
+....................    setup_comparator(NC_NC_NC_NC); 
+00D2:  MOVLW  07
+00D3:  MOVWF  1C
+00D4:  MOVF   05,W
+00D5:  MOVWF  05
+00D6:  MOVLW  10
+00D7:  MOVWF  77
+00D8:  DECFSZ 77,F
+00D9:  GOTO   0D8
+00DA:  NOP
+00DB:  MOVF   1C,W
+00DC:  BCF    03.5
+00DD:  BCF    0D.6
+....................    setup_vref(FALSE); 
+00DE:  BSF    03.5
+00DF:  CLRF   1D
+....................  
+....................    enable_interrupts(INT_EXT); 
+00E0:  BCF    03.5
+00E1:  BSF    0B.4
+....................    enable_interrupts(GLOBAL); 
+00E2:  MOVLW  C0
+00E3:  IORWF  0B,F
+....................  
+....................  
+....................    while(true){ 
+....................       passo = passo + incr; 
+00E4:  MOVF   27,W
+00E5:  ADDWF  2C,F
+....................       if(passo > 3)passo = 0; 
+00E6:  BTFSC  2C.7
+00E7:  GOTO   0EC
+00E8:  MOVF   2C,W
+00E9:  SUBLW  03
+00EA:  BTFSS  03.0
+00EB:  CLRF   2C
+....................       if(passo < 0)passo = 3; 
+00EC:  BTFSS  2C.7
+00ED:  GOTO   0F0
+00EE:  MOVLW  03
+00EF:  MOVWF  2C
+....................        
+....................       output_D(posicao[passo]); 
+00F0:  MOVLW  28
+00F1:  ADDWF  2C,W
+00F2:  MOVWF  04
+00F3:  BCF    03.7
+00F4:  MOVF   00,W
+00F5:  MOVWF  32
+00F6:  BSF    03.5
+00F7:  CLRF   08
+00F8:  BCF    03.5
+00F9:  MOVF   32,W
+00FA:  MOVWF  08
+....................       set_adc_channel(0); 
+00FB:  MOVLW  00
+00FC:  MOVWF  78
+00FD:  MOVF   1F,W
+00FE:  ANDLW  C7
+00FF:  IORWF  78,W
+0100:  MOVWF  1F
+....................       delay_us(10); 
+0101:  MOVLW  10
+0102:  MOVWF  77
+0103:  DECFSZ 77,F
+0104:  GOTO   103
+0105:  NOP
+....................       valor_p = read_adc(); 
+0106:  BSF    1F.2
+0107:  BTFSC  1F.2
+0108:  GOTO   107
+0109:  MOVF   1E,W
+010A:  CLRF   2E
+010B:  MOVWF  2D
+....................       int16 atraso = valor_p * 10; 
+010C:  MOVF   2E,W
+010D:  MOVWF  33
+010E:  MOVF   2D,W
+010F:  MOVWF  32
+0110:  CLRF   35
+0111:  MOVLW  0A
+0112:  MOVWF  34
+0113:  GOTO   05D
+0114:  MOVF   79,W
+0115:  MOVWF  31
+0116:  MOVF   78,W
+0117:  MOVWF  30
+....................       delay_ms(atraso); 
+0118:  MOVF   31,W
+0119:  MOVWF  32
+011A:  INCF   32,F
+011B:  DECF   32,F
+011C:  BTFSC  03.2
+011D:  GOTO   122
+011E:  MOVLW  FF
+011F:  MOVWF  33
+0120:  CALL   074
+0121:  GOTO   11B
+0122:  MOVF   30,W
+0123:  MOVWF  33
+0124:  CALL   074
+....................     //  input_P(delay_ms(500)); 
+....................    } 
+0125:  GOTO   0E4
+....................  
+.................... } 
+0126:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F3A   HS NOWDT NOPUT NODEBUG NOPROTECT NOBROWNOUT NOLVP NOCPD NOWRT

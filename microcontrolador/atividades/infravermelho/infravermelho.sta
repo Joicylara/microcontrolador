@@ -1,0 +1,48 @@
+
+ROM used: 144 (2%)
+          144 (2%) including unused fragments
+
+          0 Average locations per line
+          12 Average locations per statement
+
+RAM used: 13 (4%) at main() level
+          13 (4%) worst case
+
+Stack used: 1 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   29    12 100  infravermelho.c
+   17     0   0  infravermelho.h
+  326     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+----- -----
+  372    12 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0      4   3   0     5  1.0  EXT_isr
+0     93  65   0   297  2.3  MAIN
+
+Program metrics:
+    Functions               2
+    Statements              12
+    Comments                76
+    Volume (V)              320
+    Difficilty (D)          3.3
+    Effort to implement (E) 1048
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    109
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-0002E    43  0  
+0002F-007FF    97  1904  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

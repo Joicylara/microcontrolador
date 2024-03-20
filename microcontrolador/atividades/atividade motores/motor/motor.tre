@@ -1,0 +1,6 @@
+ÀÄmotor
+   ÃÄMAIN  0/120  Ram=1
+   ³  ÃÄ??0??
+   ³  ÀÄ@delay_ms1  0/22  Ram=1
+   ÀÄEXT_isr  0/46  Ram=0
+      ÀÄ@MUL88  (Inline)  Ram=2

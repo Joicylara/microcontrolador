@@ -1,0 +1,47 @@
+
+ROM used: 141 (2%)
+          141 (2%) including unused fragments
+
+          0 Average locations per line
+          9 Average locations per statement
+
+RAM used: 13 (4%) at main() level
+          13 (4%) worst case
+
+Stack used: 1 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   50    15 100  interrupcaoT0.c
+  326     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+----- -----
+  376    15 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0      9   6   0    21  0.9  EXT_isr
+0     85  60   0   310  2.8  MAIN
+
+Program metrics:
+    Functions               2
+    Statements              15
+    Comments                79
+    Volume (V)              366
+    Difficilty (D)          4.0
+    Effort to implement (E) 1458
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    96
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-0002E    43  0  
+0002F-007FF    94  1907  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

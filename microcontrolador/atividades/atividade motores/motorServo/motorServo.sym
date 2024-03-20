@@ -1,0 +1,77 @@
+004     @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     Rotation45.i
+021     Rotation90.i
+021     Rotation75.i
+021     Rotation0.i
+021     Rotation180.i
+021     MAIN.@SCRATCH1
+022     @delay_ms1.P1
+022     Rotation0.@SCRATCH1
+022     Rotation45.@SCRATCH1
+022     Rotation75.@SCRATCH1
+022     Rotation90.@SCRATCH1
+022     Rotation180.@SCRATCH1
+023     @delay_us1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0013  @delay_ms1
+0004  @delay_us1
+0027  Rotation0
+008E  Rotation45
+00B0  Rotation75
+0046  Rotation90
+006C  Rotation180
+00D6  MAIN
+00D6  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\motorServo\
+
+Project Files:
+    motorServo.c
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+
+Units:
+    C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\motorServo\motorServo (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      motorServo.err
+    Ext Symbols: motorServo.esym
+    INHX8:       motorServo.hex
+    Symbols:     motorServo.sym
+    List:        motorServo.lst
+    Debug/COFF:  motorServo.cof
+    Project:     motorServo.PJT
+    Call Tree:   motorServo.tre
+    Statistics:  motorServo.sta

@@ -1,0 +1,125 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     LCD_ADDR
+005     lcd_total_rows
+006     lcd_total_columns
+007     new_row_request
+008     BACKLIGHT_LED
+009     lcd_gotoxy.data
+00A-00B @sprintf_string
+00C     MAIN.i
+00D     lcd_init.addr
+00D     lcd_backlight_led.bl
+00D     MAIN.@SCRATCH1
+00D     @PSTRINGC_701.@SCRATCH1
+00E     lcd_init.col
+00E     @PSTRINGC_701.@SCRATCH2
+00F     LCD_PUTC.in_data
+00F     lcd_init.row
+010     lcd_init.i
+010     lcd_gotoxy.x
+011     lcd_gotoxy.y
+011     @delay_ms1.P1
+011     lcd_init.@SCRATCH1
+012     lcd_gotoxy.row
+013     lcd_gotoxy.column
+014     lcd_gotoxy.row_addr
+015     lcd_gotoxy.lcd_address
+016     lcd_gotoxy.@SCRATCH1
+017     lcd_send_byte.data
+018     lcd_send_byte.type
+019     lcd_send_byte.@SCRATCH1
+01A     i2c_send_nibble.data
+01B     i2c_send_nibble.type
+01C     i2c_send_nibble.@SCRATCH1
+01D     @I2C_WRITE_1.P1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const707.call
+000026  @const712.call
+000036  @const713.call
+000046  @const714.call
+000056  @const715.call
+000060  @const716.call
+000068  @const717.call
+000074  @const718.call
+000080  @const720.call
+00008C  @const721.call
+000096  @const726.call
+0000A6  @const727.call
+0000B6  @const728.call
+0000BA  @const729.call
+0000CC  @const730.call
+0000EA  @const731.call
+000108  @delay_ms1
+000130  @I2C_WRITE_1
+00019C  i2c_send_nibble
+00023C  lcd_send_byte
+0002A8  lcd_clear
+0002BC  lcd_init
+000380  lcd_backlight_led
+00038E  lcd_gotoxy
+0003F0  LCD_PUTC
+000432  @PSTRINGC_701
+000452  MAIN
+000452  @cinit1
+000478  @cinit2
+
+Project Directory:
+    D:\Google Drive\Projects\LCD_I2C con PIC\I2C_18F4680\
+
+Project Files:
+    LCD_via_I2C_18F4680.c                                   [09-Feb-21 12:02  CRC=D4D37FA3]
+    C:\Program Files (x86)\PICC\Devices\18F4680.H           [15-Jan-18 15:58  CRC=2884A52E]
+    i2c_Flex_LCD.c                                          [26-Apr-20 15:01  CRC=16AFB211]
+
+Source signature=2AB788F3
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=26D6
+
+Units:
+    LCD_via_I2C_18F4680 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4680
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   LCD_via_I2C_18F4680.xsym
+    Errors:      LCD_via_I2C_18F4680.err
+    Ext Symbols: LCD_via_I2C_18F4680.esym
+    INHX32:      LCD_via_I2C_18F4680.hex
+    Symbols:     LCD_via_I2C_18F4680.sym
+    List:        LCD_via_I2C_18F4680.lst
+    Debug/COFF:  LCD_via_I2C_18F4680.cof
+    Project:     LCD_via_I2C_18F4680.ccspjt
+    Call Tree:   LCD_via_I2C_18F4680.tre
+    Statistics:  LCD_via_I2C_18F4680.STA

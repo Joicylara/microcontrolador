@@ -1,0 +1,25 @@
+[PROJECT]
+Target=C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\infraVermelho\infravermelhoSem.hex
+Development_Mode=
+Processor_Text=PIC16F877A
+ToolSuite=CCS
+[C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\infraVermelho\infravermelhoSem]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\infraVermelho\infravermelhoSem.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\infraVermelho\infravermelhoSem
+[Opened Files]
+1=infravermelhoSem.c
+2=infravermelhoSem.h
+3=ex_ccpmp.c
+4=
