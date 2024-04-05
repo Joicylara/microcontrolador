@@ -1,0 +1,16 @@
+ÀÄcomunicacaoPlaca
+   ÀÄMAIN  0/105  Ram=1
+      ÃÄ??0??
+      ÃÄlcd_ini  0/92  Ram=2
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄlcd_envia_nibble  0/39  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄlcd_envia_nibble  0/39  Ram=1
+      ³  ÃÄ@const68  0/8  Ram=0
+      ³  ÀÄlcd_envia_byte  (Inline)  Ram=3
+      ³     ÃÄlcd_envia_nibble  0/39  Ram=1
+      ³     ÀÄlcd_envia_nibble  0/39  Ram=1
+      ÃÄ@PRINTF_U_9600_62_63  0/58  Ram=2
+      ³  ÃÄ@DIV88  0/21  Ram=3
+      ³  ÀÄ@DIV88  0/21  Ram=3
+      ÀÄ@delay_ms1  0/20  Ram=1

@@ -1,4 +1,4 @@
-//#include "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\comunicacaoSerial\comunicacaoSerial.h"
+//#include "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\serialProcessing\serialProcessing.h"
 
 #include <16F877A.h>
 #device adc=8
@@ -15,13 +15,16 @@
 #FUSES RESERVED                 //Used to set the reserved FUSE bits
 
 #use delay(clock=20000000)
-#use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8)
+#use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8, STREAME=Wireless)
 
+unsigned int n = 2; //ganho
+unsigned long int r=3; // referencia
+float Y_anterior = 0.0; //
 
 void main()
 {
 
-   int i=0;
+   unsigned int i = 0;
 
    setup_adc_ports(NO_ANALOGS);
    setup_adc(ADC_CLOCK_DIV_2);
@@ -33,16 +36,13 @@ void main()
    setup_comparator(NC_NC_NC_NC);
    setup_vref(FALSE);
 
-   
-
    while(true){
-   //putc('J');
-   for(i=0; i<10; i++){
-      putc('J');
-      delay_ms(100);
-   }
-   putc(13);
-   putc('\n');
+   
+      for(i=0; i<=200; i++){
+         fprintf(Wireless, "%u \n", i);
+         delay_ms(100);
+      }
+      
    }
 
 }

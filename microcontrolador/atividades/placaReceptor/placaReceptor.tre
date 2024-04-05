@@ -1,0 +1,28 @@
+ÀÄplacaReceptor
+   ÀÄMAIN  0/104  Ram=1
+      ÃÄ??0??
+      ÃÄlcd_ini  0/61  Ram=2
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄlcd_envia_nibble  0/39  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄlcd_envia_nibble  0/39  Ram=1
+      ³  ÃÄ@const69  0/8  Ram=0
+      ³  ÀÄlcd_envia_byte  0/33  Ram=3
+      ³     ÃÄlcd_envia_nibble  0/39  Ram=1
+      ³     ÀÄlcd_envia_nibble  0/39  Ram=1
+      ÀÄ@PSTRINGR_84  0/78  Ram=2
+         ÀÄlcd_escreve  (Inline)  Ram=1
+            ÃÄlcd_envia_byte  0/33  Ram=3
+            ³  ÃÄlcd_envia_nibble  0/39  Ram=1
+            ³  ÀÄlcd_envia_nibble  0/39  Ram=1
+            ÃÄ@delay_ms1  0/20  Ram=1
+            ÃÄlcd_pos_xy  (Inline)  Ram=4
+            ³  ÀÄlcd_envia_byte  0/33  Ram=3
+            ³     ÃÄlcd_envia_nibble  0/39  Ram=1
+            ³     ÀÄlcd_envia_nibble  0/39  Ram=1
+            ÃÄlcd_envia_byte  0/33  Ram=3
+            ³  ÃÄlcd_envia_nibble  0/39  Ram=1
+            ³  ÀÄlcd_envia_nibble  0/39  Ram=1
+            ÀÄlcd_envia_byte  0/33  Ram=3
+               ÃÄlcd_envia_nibble  0/39  Ram=1
+               ÀÄlcd_envia_nibble  0/39  Ram=1

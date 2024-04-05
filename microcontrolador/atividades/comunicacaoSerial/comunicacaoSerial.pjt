@@ -3,6 +3,7 @@ Target=C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\
 Development_Mode=
 Processor_Text=PIC16F877A
 ToolSuite=CCS
+Processor=0x877A
 [C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\comunicacaoSerial\comunicacaoSerial]
 Type=4
 Path=
@@ -18,3 +19,7 @@ AdditionalOptionString=
 Link=0
 Count=1
 1=C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\comunicacaoSerial\comunicacaoSerial
+[Opened Files]
+1=comunicacaoSerial.c
+2=
+3=

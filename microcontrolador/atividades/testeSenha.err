@@ -1,0 +1,42 @@
+*** Error 18 "testeSenha.c" Line 6(10,21): File can not be opened
+    Not in "C:\Program Files (x86)\PICC\devices\stdbool.h"
+    Not in "C:\Program Files (x86)\PICC\drivers\stdbool.h"
+    Not in local "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\stdbool.h"
+*** Error 18 "testeSenha.c" Line 33(10,21): File can not be opened
+    Not in local "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\mod_lcd.c"
+    Not in "C:\Program Files (x86)\PICC\devices\mod_lcd.c"
+    Not in "C:\Program Files (x86)\PICC\drivers\mod_lcd.c"
+*** Error 18 "testeSenha.c" Line 34(10,28): File can not be opened
+    Not in local "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\kbd_ext_board2.c"
+    Not in "C:\Program Files (x86)\PICC\devices\kbd_ext_board2.c"
+    Not in "C:\Program Files (x86)\PICC\drivers\kbd_ext_board2.c"
+*** Error 12 "testeSenha.c" Line 91(11,22): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 93(11,22): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 98(11,22): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 132(14,25): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 137(14,25): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 142(14,25): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 147(14,25): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 159(17,28): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 183(11,12): Undefined identifier  -- lcd_ini
+*** Error 12 "testeSenha.c" Line 206(21,22): Undefined identifier  -- tc_tecla
+*** Error 12 "testeSenha.c" Line 213(20,31): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 214(27,28): Undefined identifier  -- tc_tecla
+*** Error 12 "testeSenha.c" Line 217(23,34): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 218(30,31): Undefined identifier  -- tc_tecla
+*** Error 12 "testeSenha.c" Line 222(20,31): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 225(20,31): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 226(27,28): Undefined identifier  -- tc_tecla
+*** Error 12 "testeSenha.c" Line 232(33,34): Undefined identifier  -- tc_tecla
+*** Error 12 "testeSenha.c" Line 235(23,34): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 239(20,31): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 244(20,31): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 245(27,28): Undefined identifier  -- tc_tecla
+*** Error 12 "testeSenha.c" Line 248(30,31): Undefined identifier  -- tc_tecla
+*** Error 12 "testeSenha.c" Line 251(20,31): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 257(33,34): Undefined identifier  -- tc_tecla
+*** Error 12 "testeSenha.c" Line 259(23,34): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 265(20,31): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 271(20,31): Undefined identifier   lcd_escreve
+*** Error 12 "testeSenha.c" Line 275(20,31): Undefined identifier   lcd_escreve
+      32 Errors,  0 Warnings.

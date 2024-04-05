@@ -1,0 +1,79 @@
+004     @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     MAIN.i
+022     lcd_ini.conta
+022     @PRINTF_U_9600_62_63.P1
+022     MAIN.@SCRATCH1
+023     @PRINTF_U_9600_62_63.P1
+023     @delay_ms1.P2
+023     lcd_ini.@SCRATCH1
+024     lcd_envia_byte.endereco
+024     @DIV88.P1
+025     @DIV88.P1
+025     lcd_envia_byte.dado
+026     lcd_envia_byte.@SCRATCH1
+026     @DIV88.@SCRATCH1
+027     lcd_envia_nibble.dado
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000C  @delay_ms1
+0004  INI_LCD
+0020  lcd_envia_nibble
+007E  lcd_envia_byte
+0047  lcd_ini
+00F2  MAIN
+00A3  @DIV88
+00B8  @PRINTF_U_9600_62_63
+00F2  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\comunicacaoPlacas\
+
+Project Files:
+    comunicacaoPlaca.c
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+    mod_lcd.c
+
+Units:
+    C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\comunicacaoPlacas\comunicacaoPlaca (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      comunicacaoPlaca.err
+    Ext Symbols: comunicacaoPlaca.esym
+    INHX8:       comunicacaoPlaca.hex
+    Symbols:     comunicacaoPlaca.sym
+    List:        comunicacaoPlaca.lst
+    Debug/COFF:  comunicacaoPlaca.cof
+    Project:     comunicacaoPlaca.PJT
+    Call Tree:   comunicacaoPlaca.tre
+    Statistics:  comunicacaoPlaca.sta

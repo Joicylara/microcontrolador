@@ -1,0 +1,62 @@
+
+ROM used: 1054 (13%)
+          1054 (13%) including unused fragments
+
+          2 Average locations per line
+          5 Average locations per statement
+
+RAM used: 14 (4%) at main() level
+          31 (8%) worst case
+
+Stack used: 6 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   62    25  11  testeTeclado.c
+  326     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+  211    77  34  i2c_Flex_LCD.c
+   58   123  55  kbd_ext_board2_ad.c
+----- -----
+  657   225 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     20   2   1             @delay_ms1
+0     92   9   1             @I2C_WRITE_1
+0     81   8   3   574  5.9  i2c_send_nibble
+0     82   8   3   149  2.8  lcd_send_byte
+0     10   1   0    61  1.9  lcd_clear
+0      8   1   0             @const92
+0    128  12   5   902  5.8  lcd_init
+ Inline        7   681  8.0  lcd_gotoxy
+0     92   9   1   310  5.9  LCD_PUTC
+0    296  28   4  3587  6.5  tc_tecla
+0    147  14   2   750  4.8  MAIN
+0      8   1   0             @const111
+0     70   7   3             @PSTRINGC7_102
+0      6   1   0             @const113
+0      5   0   0             @const114
+0      5   0   0             @const116
+
+Program metrics:
+    Functions               8
+    Statements              225
+    Comments                181
+    Volume (V)              9612
+    Difficilty (D)          41.9
+    Effort to implement (E) 402706
+    Time to implement (T)   6 hours, 13 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   34
+    Maintainability (MI)    123
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1050  994  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

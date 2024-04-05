@@ -1,0 +1,177 @@
+004     @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-021 strtok.save
+022     @TRIS_C
+023     LCD_ADDR
+024     lcd_total_rows
+025     lcd_total_columns
+026     new_row_request
+027     BACKLIGHT_LED
+028     lcd_gotoxy.data
+029     MAIN.tmp
+02A     MAIN.id
+02B-02E MAIN.senha
+02F-030 MAIN.memoria
+031     MAIN.i
+032-033 MAIN.j
+034     validarSenha.id
+034     teclaValida.c
+034     tc_tecla.timeout
+034     lcd_init.ADDR
+034     existente.id
+034-035 write_ext_eeprom.address
+034     home.@SCRATCH1
+034     @PSTRINGC_194.@SCRATCH1
+034     MAIN.@SCRATCH1
+035     lcd_init.col
+035-036 existente.i
+035     tc_tecla.to
+035-036 validarSenha.senha
+035     @PSTRINGC_194.@SCRATCH2
+035     MAIN.@SCRATCH2
+036     write_ext_eeprom.data
+036     tc_tecla.k
+036     lcd_init.row
+037     lcd_init.i
+037     validarSenha.a
+037     tc_tecla.@SCRATCH1
+037     write_ext_eeprom.@SCRATCH1
+037     existente.@SCRATCH1
+038     validarSenha.senhaCorreta
+038     lcd_init.@SCRATCH1
+039     validarSenha.idExistente
+03A-03B validarSenha.j
+03C     validarSenha.digito
+03D     i
+03E     @PSTRINGC7_194.@SCRATCH1
+03E     validarSenha.@SCRATCH1
+03F     @PSTRINGC7_194.@SCRATCH2
+03F     validarSenha.@SCRATCH2
+040     @PSTRINGC7_194.@SCRATCH3
+040     validarSenha.@SCRATCH3
+041     LCD_PUTC.in_data
+041-042 read_ext_eeprom.address
+042     @delay_ms1.P1
+042     lcd_gotoxy.x
+043     lcd_gotoxy.y
+043     read_ext_eeprom.data
+044     lcd_gotoxy.row
+044     @I2C_READ_2.P1
+044.0   ext_eeprom_ready.ack
+044     read_ext_eeprom.@SCRATCH1
+045     @I2C_WRITE_2.P1
+045     lcd_gotoxy.column
+045     @I2C_READ_2.@SCRATCH1
+046     lcd_gotoxy.row_addr
+046     @I2C_READ_2.@SCRATCH2
+047     lcd_gotoxy.lcd_address
+048     lcd_gotoxy.@SCRATCH1
+049     lcd_send_byte.data
+04A     lcd_send_byte.type
+04B     lcd_send_byte.@SCRATCH1
+04C     i2c_send_nibble.data
+04D     i2c_send_nibble.type
+04E     i2c_send_nibble.@SCRATCH1
+04F     @I2C_WRITE_1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+00BE  @delay_ms1
+00D2  @I2C_WRITE_1
+012E  i2c_send_nibble
+017F  lcd_send_byte
+01D1  lcd_clear
+0004  LCD_INIT_STRING
+01DB  lcd_init
+0387  lcd_gotoxy
+036F  LCD_PUTC
+0448  tc_tecla
+060C  @I2C_READ_2
+0268  @I2C_WRITE_2
+025B  init_ext_eeprom
+02C4  ext_eeprom_ready
+030E  write_ext_eeprom
+058E  read_ext_eeprom
+056E  teclaValida
+0411  home
+000C  @const235
+0416  @PSTRINGC_194
+0024  @const237
+03CB  @PSTRINGC7_194
+0031  @const242
+06AA  validarSenha
+0041  @const261
+004E  @const262
+0059  @const263
+0062  @const264
+0680  existente
+006D  @const268
+0800  MAIN
+0075  @const277
+0078  @const278
+007B  @const279
+007E  @const281
+0083  @const283
+0093  @const284
+0096  @const285
+00A3  @const287
+00AC  @const288
+00B4  @const289
+0800  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\testeSenha\
+
+Project Files:
+    testeSenha.c
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h
+    stdbool.h
+    i2c_Flex_LCD.c
+    kbd_ext_board2_ad.c
+    2408.C
+
+Units:
+    C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\testeSenha\testeSenha (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      testeSenha.err
+    Ext Symbols: testeSenha.esym
+    INHX8:       testeSenha.hex
+    Symbols:     testeSenha.sym
+    List:        testeSenha.lst
+    Debug/COFF:  testeSenha.cof
+    Project:     testeSenha.PJT
+    Call Tree:   testeSenha.tre
+    Statistics:  testeSenha.sta

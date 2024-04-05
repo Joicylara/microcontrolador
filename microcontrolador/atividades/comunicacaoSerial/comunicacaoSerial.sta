@@ -1,0 +1,46 @@
+
+ROM used: 137 (2%)
+          137 (2%) including unused fragments
+
+          0 Average locations per line
+          8 Average locations per statement
+
+RAM used: 7 (2%) at main() level
+          8 (2%) worst case
+
+Stack used: 1 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   49    17 100  comunicacaoSerial.c
+  326     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+----- -----
+  375    17 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     22  16   1             @delay_ms1
+0    111  81   1   463  4.8  main
+
+Program metrics:
+    Functions               1
+    Statements              17
+    Comments                78
+    Volume (V)              465
+    Difficilty (D)          4.6
+    Effort to implement (E) 2156
+    Time to implement (T)   2 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    138
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   133  1911  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

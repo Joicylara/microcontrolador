@@ -21,6 +21,8 @@
 void main()
 {
 
+   int i=0;
+
    setup_adc_ports(NO_ANALOGS);
    setup_adc(ADC_CLOCK_DIV_2);
    setup_psp(PSP_DISABLED);
@@ -31,6 +33,16 @@ void main()
    setup_comparator(NC_NC_NC_NC);
    setup_vref(FALSE);
 
-   // TODO: USER CODE!!
+   
+
+   while(true){
+   //putc('J');
+   for(i=0; i<10; i++){
+      putc('J');
+      delay_ms(100);
+   }
+   putc(13);
+   putc('\n');
+   }
 
 }

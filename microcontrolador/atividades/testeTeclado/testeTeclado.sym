@@ -1,0 +1,110 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     LCD_ADDR
+022     lcd_total_rows
+023     lcd_total_columns
+024     new_row_request
+025     BACKLIGHT_LED
+026     lcd_gotoxy.data
+027     MAIN.tmp
+028     lcd_init.ADDR
+028     tc_tecla.timeout
+028     MAIN.@SCRATCH1
+028     @PSTRINGC7_102.@SCRATCH1
+029     tc_tecla.to
+029     lcd_init.col
+029     @PSTRINGC7_102.@SCRATCH2
+02A     tc_tecla.k
+02A     lcd_init.row
+02A     @PSTRINGC7_102.@SCRATCH3
+02B     lcd_init.i
+02B     LCD_PUTC.in_data
+02B     tc_tecla.@SCRATCH1
+02C     @delay_ms1.P1
+02C     lcd_gotoxy.x
+02C     lcd_init.@SCRATCH1
+02D     lcd_gotoxy.y
+02E     lcd_gotoxy.row
+02F     lcd_gotoxy.column
+030     lcd_gotoxy.row_addr
+031     lcd_gotoxy.lcd_address
+032     lcd_gotoxy.@SCRATCH1
+033     lcd_send_byte.data
+034     lcd_send_byte.type
+035     lcd_send_byte.@SCRATCH1
+036     i2c_send_nibble.data
+037     i2c_send_nibble.type
+038     i2c_send_nibble.@SCRATCH1
+039     @I2C_WRITE_1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0024  @delay_ms1
+0038  @I2C_WRITE_1
+0094  i2c_send_nibble
+00E5  lcd_send_byte
+0137  lcd_clear
+0004  LCD_INIT_STRING
+0141  lcd_init
+01D9  lcd_gotoxy
+01C1  LCD_PUTC
+0263  tc_tecla
+038B  MAIN
+000C  @const111
+021D  @PSTRINGC7_102
+0014  @const113
+001A  @const114
+001F  @const116
+038B  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\testeTeclado\
+
+Project Files:
+    testeTeclado.c
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+    i2c_Flex_LCD.c
+    kbd_ext_board2_ad.c
+
+Units:
+    C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\testeTeclado\testeTeclado (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      testeTeclado.err
+    Ext Symbols: testeTeclado.esym
+    INHX8:       testeTeclado.hex
+    Symbols:     testeTeclado.sym
+    List:        testeTeclado.lst
+    Debug/COFF:  testeTeclado.cof
+    Project:     testeTeclado.PJT
+    Call Tree:   testeTeclado.tre
+    Statistics:  testeTeclado.sta

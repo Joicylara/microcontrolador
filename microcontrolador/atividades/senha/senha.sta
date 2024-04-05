@@ -1,0 +1,59 @@
+
+ROM used: 656 (8%)
+          656 (8%) including unused fragments
+
+          1 Average locations per line
+          7 Average locations per statement
+
+RAM used: 14 (4%) at main() level
+          31 (8%) worst case
+
+Stack used: 6 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   60    16  17  senha.c
+  326     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+  211    77  83  i2c_Flex_LCD.c
+----- -----
+  597    93 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   3   1             @delay_ms1
+0     74  11   1             @I2C_WRITE_1
+0     10   2   1    63  2.3  lcd_backlight_led
+0     77  12   3   574  5.9  i2c_send_nibble
+0     67  10   3   149  2.8  lcd_send_byte
+0     10   2   0    61  1.9  lcd_clear
+0      8   1   0             @const92
+0    113  17   5   902  5.8  lcd_init
+0     56   9   7   681  8.0  lcd_gotoxy
+0     38   6   1   310  5.9  LCD_PUTC
+0     95  14   2   482  4.2  MAIN
+0      9   1   0             @const107
+0     70  11   3             @PSTRINGC7_102
+0      4   1   0             @const109
+
+Program metrics:
+    Functions               8
+    Statements              93
+    Comments                170
+    Volume (V)              4767
+    Difficilty (D)          37.1
+    Effort to implement (E) 176789
+    Time to implement (T)   2 hours, 44 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   18
+    Maintainability (MI)    135
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   652  1392  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

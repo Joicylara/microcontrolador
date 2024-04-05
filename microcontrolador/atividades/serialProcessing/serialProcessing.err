@@ -1,0 +1,5 @@
+>>> Warning 202 "serialProcessing.c" Line 20(16,17): Variable never used:   n
+>>> Warning 202 "serialProcessing.c" Line 21(19,20): Variable never used:   r
+>>> Warning 202 "serialProcessing.c" Line 22(18,28): Variable never used:   Y_anterior
+      Memory usage:   ROM=3%      RAM=4% - 5%
+      0 Errors,  3 Warnings.

@@ -1,5 +1,3 @@
-//#include "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\comunicacaoSerial\comunicacaoSerial.h"
-
 #include <16F877A.h>
 #device adc=8
 
@@ -17,11 +15,20 @@
 #use delay(clock=20000000)
 #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8)
 
+#ifndef lcd_enable
+ #define lcd_enable pin_E1 // pino enable do LCD
+ #define lcd_rs pin_E2 // pino rs do LCD
+ //#define lcd_rw pin_e2 // pino rw do LCD
+ #define lcd_d4 pin_d4 // pino de dados d4 do LCD
+ #define lcd_d5 pin_d5 // pino de dados d5 do LCD
+ #define lcd_d6 pin_d6 // pino de dados d6 do LCD
+ #define lcd_d7 pin_d7 // pino de dados d7 do LCD
+#endif
 
-void main()
-{
+#include "mod_lcd.c"
 
-   int i=0;
+void main() {
+   int received_char;
 
    setup_adc_ports(NO_ANALOGS);
    setup_adc(ADC_CLOCK_DIV_2);
@@ -32,17 +39,15 @@ void main()
    setup_timer_2(T2_DISABLED,0,1);
    setup_comparator(NC_NC_NC_NC);
    setup_vref(FALSE);
-
    
-
-   while(true){
-   //putc('J');
-   for(i=0; i<10; i++){
-      putc('J');
-      delay_ms(100);
+   lcd_ini();
+   
+   while (true) {
+      
+         received_char = getc(); // Lê o caractere recebido
+         printf(lcd_escreve, received_char);
+         output_toggle(PIN_D0);
+ 
    }
-   putc(13);
-   putc('\n');
-   }
-
 }
+

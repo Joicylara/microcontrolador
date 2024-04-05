@@ -1,4 +1,4 @@
-//#include "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\comunicacaoSerial\comunicacaoSerial.h"
+//#include "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\entradaDados\entradaDados.h"
 
 #include <16F877A.h>
 #device adc=8
@@ -15,13 +15,10 @@
 #FUSES RESERVED                 //Used to set the reserved FUSE bits
 
 #use delay(clock=20000000)
-#use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8)
 
 
 void main()
 {
-
-   int i=0;
 
    setup_adc_ports(NO_ANALOGS);
    setup_adc(ADC_CLOCK_DIV_2);
@@ -33,16 +30,14 @@ void main()
    setup_comparator(NC_NC_NC_NC);
    setup_vref(FALSE);
 
-   
-
    while(true){
-   //putc('J');
-   for(i=0; i<10; i++){
-      putc('J');
-      delay_ms(100);
-   }
-   putc(13);
-   putc('\n');
+   
+      //Quando pressionar ele não entra, porque o sistema é pull up, portanto é false(pq dá 0), então para entrar terá que negar a entrada
+      if(!input(PIN_B2)){
+         //toggle inverte o estado atual  
+         output_toggle(PIN_D6);
+         delay_ms(2000);
+      }
    }
 
 }
