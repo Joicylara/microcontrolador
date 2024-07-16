@@ -1,0 +1,206 @@
+CCS PCM C Compiler, Version 4.104, 5967               16-jul-24 16:05
+
+               Filename: C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\Trabalho\testeComunicacao\testeComunicacao.lst
+
+               ROM used: 234 words (3%)
+                         Largest free fragment is 2048
+               RAM used: 7 (2%) at main() level
+                         11 (3%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   065
+0003:  NOP
+.................... //#include "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\Trabalho\testeComunicacao\testeComunicacao.h" 
+....................  
+.................... #include <16F877A.h> 
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+.................... #list 
+....................  
+.................... #device adc=8 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES HS                       //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... #FUSES NOPUT                    //No Power Up Timer 
+.................... #FUSES NOPROTECT                //Code not protected from reading 
+.................... #FUSES NODEBUG                  //No Debug mode for ICD 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOCPD                    //No EE protection 
+.................... #FUSES NOWRT                    //Program memory not write protected 
+.................... #FUSES RESERVED                 //Used to set the reserved FUSE bits 
+....................  
+.................... #use delay(clock=20000000) 
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8) 
+....................  
+....................  
+.................... void main() 
+.................... { 
+*
+0014:  DATA 00,00
+*
+0065:  CLRF   04
+0066:  BCF    03.7
+0067:  MOVLW  1F
+0068:  ANDWF  03,F
+0069:  MOVLW  81
+006A:  BSF    03.5
+006B:  MOVWF  19
+006C:  MOVLW  A6
+006D:  MOVWF  18
+006E:  MOVLW  90
+006F:  BCF    03.5
+0070:  MOVWF  18
+0071:  BSF    03.5
+0072:  BSF    1F.0
+0073:  BSF    1F.1
+0074:  BSF    1F.2
+0075:  BCF    1F.3
+0076:  MOVLW  07
+0077:  MOVWF  1C
+....................     char received_char; 
+....................  
+....................     setup_adc_ports(NO_ANALOGS); 
+*
+007B:  BSF    03.5
+007C:  BSF    1F.0
+007D:  BSF    1F.1
+007E:  BSF    1F.2
+007F:  BCF    1F.3
+....................     setup_adc(ADC_CLOCK_DIV_2); 
+0080:  BCF    1F.6
+0081:  BCF    03.5
+0082:  BCF    1F.6
+0083:  BCF    1F.7
+0084:  BSF    03.5
+0085:  BCF    1F.7
+0086:  BCF    03.5
+0087:  BSF    1F.0
+....................     setup_psp(PSP_DISABLED); 
+0088:  BSF    03.5
+0089:  BCF    09.4
+....................     setup_spi(SPI_SS_DISABLED); 
+008A:  BCF    03.5
+008B:  BCF    14.5
+008C:  BCF    20.5
+008D:  MOVF   20,W
+008E:  BSF    03.5
+008F:  MOVWF  07
+0090:  BCF    03.5
+0091:  BSF    20.4
+0092:  MOVF   20,W
+0093:  BSF    03.5
+0094:  MOVWF  07
+0095:  BCF    03.5
+0096:  BCF    20.3
+0097:  MOVF   20,W
+0098:  BSF    03.5
+0099:  MOVWF  07
+009A:  MOVLW  01
+009B:  BCF    03.5
+009C:  MOVWF  14
+009D:  MOVLW  00
+009E:  BSF    03.5
+009F:  MOVWF  14
+....................     setup_timer_0(RTCC_INTERNAL|RTCC_DIV_1); 
+00A0:  MOVF   01,W
+00A1:  ANDLW  C7
+00A2:  IORLW  08
+00A3:  MOVWF  01
+....................     setup_timer_1(T1_DISABLED); 
+00A4:  BCF    03.5
+00A5:  CLRF   10
+....................     setup_timer_2(T2_DISABLED,0,1); 
+00A6:  MOVLW  00
+00A7:  MOVWF  78
+00A8:  MOVWF  12
+00A9:  MOVLW  00
+00AA:  BSF    03.5
+00AB:  MOVWF  12
+....................     setup_comparator(NC_NC_NC_NC); 
+00AC:  MOVLW  07
+00AD:  MOVWF  1C
+00AE:  MOVF   05,W
+00AF:  MOVWF  05
+00B0:  MOVLW  10
+00B1:  MOVWF  77
+00B2:  DECFSZ 77,F
+00B3:  GOTO   0B2
+00B4:  NOP
+00B5:  MOVF   1C,W
+00B6:  BCF    03.5
+00B7:  BCF    0D.6
+....................     setup_vref(FALSE); 
+00B8:  BSF    03.5
+00B9:  CLRF   1D
+....................  
+....................     while(true) { 
+....................         // Espera até receber um caractere pela serial 
+....................         received_char = getc(); 
+00BA:  BCF    03.5
+00BB:  BTFSS  0C.5
+00BC:  GOTO   0BB
+00BD:  MOVF   1A,W
+00BE:  MOVWF  21
+....................  
+....................         // Envia de volta o caractere recebido 
+....................         //putc(received_char); 
+....................  
+....................         // Opcional: envia uma mensagem de resposta 
+....................         if (received_char == 'H') { 
+00BF:  MOVF   21,W
+00C0:  SUBLW  48
+00C1:  BTFSS  03.2
+00C2:  GOTO   0DA
+....................            printf("Hello, world! %c\r\n", received_char); 
+00C3:  MOVLW  04
+00C4:  BSF    03.6
+00C5:  MOVWF  0D
+00C6:  MOVLW  00
+00C7:  MOVWF  0F
+00C8:  BCF    03.0
+00C9:  MOVLW  0E
+00CA:  BCF    03.6
+00CB:  MOVWF  22
+00CC:  CALL   015
+00CD:  MOVF   21,W
+00CE:  BTFSS  0C.4
+00CF:  GOTO   0CE
+00D0:  MOVWF  19
+00D1:  MOVLW  0D
+00D2:  BTFSS  0C.4
+00D3:  GOTO   0D2
+00D4:  MOVWF  19
+00D5:  MOVLW  0A
+00D6:  BTFSS  0C.4
+00D7:  GOTO   0D6
+00D8:  MOVWF  19
+....................         }else{ 
+00D9:  GOTO   0E8
+....................             printf("You sent: %c", received_char); 
+00DA:  MOVLW  0E
+00DB:  BSF    03.6
+00DC:  MOVWF  0D
+00DD:  MOVLW  00
+00DE:  MOVWF  0F
+00DF:  BCF    03.0
+00E0:  MOVLW  0A
+00E1:  BCF    03.6
+00E2:  MOVWF  22
+00E3:  CALL   015
+00E4:  MOVF   21,W
+00E5:  BTFSS  0C.4
+00E6:  GOTO   0E5
+00E7:  MOVWF  19
+....................         } 
+....................     } 
+00E8:  GOTO   0BB
+.................... } 
+....................  
+00E9:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F3A   HS NOWDT NOPUT NODEBUG NOPROTECT NOBROWNOUT NOLVP NOCPD NOWRT

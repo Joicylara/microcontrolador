@@ -1,0 +1,55 @@
+
+ROM used: 578 (7%)
+          578 (7%) including unused fragments
+
+          1 Average locations per line
+          17 Average locations per statement
+
+RAM used: 20 (5%) at main() level
+          30 (8%) worst case
+
+Stack used: 1 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   77    34 100  trabalho.c
+  326     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+----- -----
+  403    34 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     23   4   1             @delay_ms1
+0     91  16   4   257  4.1  get_distance
+ Inline        5             @DIV1616
+0     62  11   8   219  5.5  convert_to_int
+ Inline        5             @MUL1616
+0    127  22  14   526  5.4  MAIN
+0     14   2   0             @const88
+0     74  13   3             @PSTRINGC7_9600_62_63
+0     12   2   0             @const90
+0     80  14   4             @PSTRINGCN7_9600_62_63
+0     91  16   9             @PRINTF_LU_9600_62_63
+
+Program metrics:
+    Functions               3
+    Statements              34
+    Comments                88
+    Volume (V)              1299
+    Difficilty (D)          13.9
+    Effort to implement (E) 18029
+    Time to implement (T)   17 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    143
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   574  1470  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

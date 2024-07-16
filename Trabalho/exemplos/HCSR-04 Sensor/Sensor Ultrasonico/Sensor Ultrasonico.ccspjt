@@ -1,0 +1,19 @@
+[PROJECT]
+Target=Sensor Ultrasonico.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Sensor Ultrasonico.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Sensor Ultrasonico.c]
+Type=4
+[mru-list]
+1=Sensor Ultrasonico.c
+[Opened Files]
+1=Sensor Ultrasonico.c
+2=
+[Units]
+Count=1
+1=Sensor Ultrasonico (main)

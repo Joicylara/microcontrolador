@@ -1,0 +1,5 @@
+Compiling D:\Google Drive\Projects\LCD_I2C con PIC\I2C_18F4680\LCD_via_I2C_18F4680 on 09-Feb-21 at 12:02
+>>> Warning 202 "D:\Google Drive\Projects\LCD_I2C con PIC\I2C_18F4680\i2c_Flex_LCD.c" Line 174(13,17): Variable never used:   data
+      Memory usage:   ROM=3%      RAM=0% - 1%
+      0 Errors,  1 Warnings.
+Build Successful.

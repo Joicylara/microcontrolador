@@ -1,0 +1,8 @@
+ÀÄtestePWM
+   ÀÄMAIN  0/44  Ram=0
+      ÃÄ??0??
+      ÃÄsetup_pwm  0/19  Ram=0
+      ÃÄset_cooler_speed  0/3  Ram=1
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÃÄset_cooler_speed  0/3  Ram=1
+      ÀÄ@delay_ms1  0/21  Ram=1

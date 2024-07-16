@@ -1,0 +1,71 @@
+
+ROM used:   1371/8192 (17%)
+            1371/8192 (17%) including unused fragments
+
+            1.4 Average locations per line
+            19.6 Average locations per statement
+
+RAM used:   13/368 (4%) at main() level
+            40/368 (11%) worst case
+
+Stack used: 6 worst case (6 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   37    11  16  Sensor Ultrasonico.c
+  671     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h
+  242    46  66  ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd1.c
+   24    13  19  ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\HCSR04.c
+----- -----
+  974    70 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     20   1    1             @delay_ms1
+0      8   1    0    30  1.3  @const622
+0     46   3    1   326  2.8  lcd_send_nibble
+0     39   3    3   235  3.8  lcd_send_byte
+0     47   3    2   380  4.7  lcd_init
+0     18   1    4   186  5.5  lcd_gotoxy
+0     36   3    1   272  4.1  lcd_putc
+0     10   1    0    17  0.8  lcd_clear
+0      1   0    0   235  3.8  @const642
+0     86   6    4   380  4.7  @PSTRINGC7_636
+0      5   0    0    30  1.3  HCSR04_init
+0    234  17   14   406  4.3  HCSR04_get_distance
+ Inline         4    82  2.7  @DTOF
+0    202  15   14    17  0.8  @DIVFF
+0    117   9   13   233  2.6  @MULFF
+ Inline         2             @ITOF
+0     88   6    0   233  2.6  MAIN
+0      8   1    0             @const663
+0      8   1    0             @const664
+0     89   6    5             @PSTRINGCN7_636
+ Inline         5             @FTOSD
+0     79   6   13             @DIV3232
+0    226  16   13             @PRINTF_L32D_636FPFPF
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               15
+    Statements              70
+    Comments                167
+    Volume (V)              5299
+    Difficulty (D)          45.4
+    Effort to implement (E) 240681
+    Time to implement (T)   3 hours, 43 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   11
+    Maintainability (MI)    70
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1367  677  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

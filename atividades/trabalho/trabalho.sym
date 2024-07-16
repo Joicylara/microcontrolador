@@ -1,0 +1,100 @@
+004     @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @TRIS_C
+021-022 MAIN.distance
+023-024 MAIN.desired_distance
+025-02E MAIN.input_buffer
+02F-030 @PRINTF_LU_9600_62_63.P1
+02F-030 convert_to_int.buffer
+02F     @delay_ms1.P1
+02F     @PSTRINGCN7_9600_62_63.P2
+02F-030 get_distance.duration
+02F     @PSTRINGC7_9600_62_63.@SCRATCH1
+030     @PSTRINGC7_9600_62_63.@SCRATCH2
+030     @PSTRINGCN7_9600_62_63.@SCRATCH1
+031-032 get_distance.distance
+031-032 convert_to_int.result
+031     @PSTRINGC7_9600_62_63.@SCRATCH3
+031     @PSTRINGCN7_9600_62_63.@SCRATCH2
+031     @PRINTF_LU_9600_62_63.@SCRATCH1
+032     @PSTRINGCN7_9600_62_63.@SCRATCH3
+032     @PRINTF_LU_9600_62_63.@SCRATCH2
+033-034 @DIV1616.P1
+033     convert_to_int.i
+033     @PRINTF_LU_9600_62_63.@SCRATCH3
+034-035 @MUL1616.P1
+034     convert_to_int.@SCRATCH1
+034     @PRINTF_LU_9600_62_63.@SCRATCH4
+035-036 @DIV1616.P1
+035     convert_to_int.@SCRATCH2
+035     @PRINTF_LU_9600_62_63.@SCRATCH5
+036-037 @MUL1616.P1
+036     convert_to_int.@SCRATCH3
+036     @PRINTF_LU_9600_62_63.@SCRATCH6
+037     @DIV1616.@SCRATCH1
+037     @PRINTF_LU_9600_62_63.@SCRATCH7
+038     @MUL1616.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+01AC  @delay_ms1
+00A6  get_distance
+00D2  @DIV1616
+0068  convert_to_int
+007B  @MUL1616
+01C3  MAIN
+0004  @const88
+001E  @PSTRINGC7_9600_62_63
+0012  @const90
+0101  @PSTRINGCN7_9600_62_63
+0151  @PRINTF_LU_9600_62_63
+01C3  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\
+
+Project Files:
+    trabalho.c
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+
+Units:
+    C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\trabalho (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      trabalho.err
+    Ext Symbols: trabalho.esym
+    INHX8:       trabalho.hex
+    Symbols:     trabalho.sym
+    List:        trabalho.lst
+    Debug/COFF:  trabalho.cof
+    Project:     trabalho.PJT
+    Call Tree:   trabalho.tre
+    Statistics:  trabalho.sta

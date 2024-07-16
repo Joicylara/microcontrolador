@@ -1,0 +1,68 @@
+ÀÄSensor Ultrasonico
+   ÀÄMAIN  0/88  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄHCSR04_init  0/5  Ram=0
+      ÃÄlcd_init  0/47  Ram=2
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄlcd_send_nibble  0/46  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄlcd_send_nibble  0/46  Ram=1
+      ³  ÃÄ@const622  0/8  Ram=0
+      ³  ÃÄlcd_send_byte  0/39  Ram=3
+      ³  ³  ÃÄlcd_send_nibble  0/46  Ram=1
+      ³  ³  ÀÄlcd_send_nibble  0/46  Ram=1
+      ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ÃÄHCSR04_get_distance  0/234  Ram=14
+      ³  ÃÄ@DTOF  (Inline)  Ram=4
+      ³  ÃÄ@DIVFF  0/202  Ram=14
+      ³  ÃÄ@MULFF  0/117  Ram=13
+      ³  ÃÄ@ITOF  (Inline)  Ram=2
+      ³  ÃÄ@DIVFF  0/202  Ram=14
+      ³  ÃÄ@MULFF  0/117  Ram=13
+      ³  ÀÄ@MULFF  0/117  Ram=13
+      ÃÄlcd_clear  0/10  Ram=0
+      ³  ÀÄ@PSTRINGC7_636  0/86  Ram=4
+      ³     ÃÄlcd_putc  0/36  Ram=1
+      ³     ³  ÃÄlcd_send_byte  0/39  Ram=3
+      ³     ³  ³  ÀÄ*
+      ³     ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³     ³  ÃÄlcd_gotoxy  0/18  Ram=4
+      ³     ³  ³  ÀÄlcd_send_byte  0/39  Ram=3
+      ³     ³  ³     ÀÄ*
+      ³     ³  ÃÄlcd_send_byte  0/39  Ram=3
+      ³     ³  ³  ÀÄ*
+      ³     ³  ÀÄlcd_send_byte  0/39  Ram=3
+      ³     ³     ÀÄ*
+      ³     ÀÄlcd_putc  0/36  Ram=1
+      ³        ÀÄ*
+      ÃÄlcd_gotoxy  0/18  Ram=4
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC7_636  0/86  Ram=4
+      ³  ÀÄ*
+      ÃÄlcd_gotoxy  0/18  Ram=4
+      ³  ÀÄ*
+      ÃÄ@PSTRINGCN7_636  0/89  Ram=5
+      ³  ÃÄlcd_putc  0/36  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄlcd_putc  0/36  Ram=1
+      ³     ÀÄ*
+      ÃÄ@PRINTF_L32D_636FPFPF  0/226  Ram=13
+      ³  ÃÄ@MULFF  0/117  Ram=13
+      ³  ÃÄ@FTOSD  (Inline)  Ram=5
+      ³  ÃÄ@DIV3232  0/79  Ram=13
+      ³  ÃÄlcd_putc  0/36  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄlcd_putc  0/36  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄlcd_putc  0/36  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄlcd_putc  0/36  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄ@DIV3232  0/79  Ram=13
+      ÃÄlcd_putc  0/36  Ram=1
+      ³  ÀÄ*
+      ÃÄlcd_putc  0/36  Ram=1
+      ³  ÀÄ*
+      ÃÄlcd_putc  0/36  Ram=1
+      ³  ÀÄ*
+      ÀÄ@delay_ms1  0/20  Ram=1

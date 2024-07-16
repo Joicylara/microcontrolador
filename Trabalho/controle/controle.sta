@@ -1,0 +1,75 @@
+
+ROM used: 1858 (23%)
+          1858 (23%) including unused fragments
+
+          3 Average locations per line
+          16 Average locations per statement
+
+RAM used: 22 (6%) at main() level
+          53 (14%) worst case
+
+Stack used: 6 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   89    24  21  controle.c
+  326     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+  211    77  66  i2c_Flex_LCD.c
+   33    16  14  HCSR04.c
+----- -----
+  659   117 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   1   1             @delay_ms1
+0     74   4   1             @I2C_WRITE_1
+0     10   1   1    63  2.3  lcd_backlight_led
+0     77   4   3   574  5.9  i2c_send_nibble
+0     67   4   3   149  2.8  lcd_send_byte
+0     10   1   0    61  1.9  lcd_clear
+0      8   0   0             @const95
+0    113   6   5   902  5.8  lcd_init
+ Inline        7   681  8.0  lcd_gotoxy
+0     92   5   1   310  5.9  LCD_PUTC
+0     11   1   0    84  1.7  HCSR04_init
+0    203  11  14   412  4.3  HCSR04_get_distance
+ Inline        4             @DTOF
+0    202  11  14             @DIVFF
+0    117   6  13             @MULFF
+0     29   2   2             @ITOF
+0     19   1   0    50  1.5  setup_pwm
+0      3   0   1    29  1.3  set_cooler_speed
+0    173   9   1   538  4.2  MAIN
+0     13   1   0             @const131
+0     74   4   3   518  4.5  @PSTRINGC7_9600_62_63
+0     12   1   0             @const133
+0     82   4   4             @PSTRINGCN7_9600_62_63
+0      8   0   0             @const136
+0     72   4   3             @PSTRINGC7_105
+ Inline        5             @FTOSD
+0     66   4  13             @DIV3232
+0    233  13  13             @PRINTF_L32D_105FPFPF
+0     65   3  10             @FLT
+
+Program metrics:
+    Functions               13
+    Statements              117
+    Comments                188
+    Volume (V)              7009
+    Difficilty (D)          49.2
+    Effort to implement (E) 344869
+    Time to implement (T)   5 hours, 19 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   19
+    Maintainability (MI)    83
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1854  190  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

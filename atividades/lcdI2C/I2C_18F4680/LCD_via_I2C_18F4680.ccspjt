@@ -1,0 +1,28 @@
+[PROJECT]
+Target=LCD_via_I2C_18F4680.hex
+Processor_Text=PIC18F4680
+CCSVersion=5.076
+Compiler=PCH
+[Target Data]
+FileList=LCD_via_I2C_18F4680.c
+[LCD_via_I2C_18F4680.c]
+Type=4
+[mru-list]
+1=LCD_via_I2C_18F4680.c
+[Units]
+Count=1
+1=LCD_via_I2C_18F4680 (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=09-02-2021
+D1_L=2
+D1_L1=[43556]Stopped Editing.
+TotalEdit=6
+TotalDebug=0
+D1_E=6
+D1_D=0
+D1_L2=[45620]Project Closed.

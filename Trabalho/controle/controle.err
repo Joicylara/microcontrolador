@@ -1,0 +1,4 @@
+>>> Warning 202 "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\Trabalho\controle\i2c_Flex_LCD.c" Line 174(13,17): Variable never used:   data
+>>> Warning 202 "controle.c" Line 36(14,15): Variable never used:   i
+      Memory usage:   ROM=23%      RAM=6% - 14%
+      0 Errors,  2 Warnings.

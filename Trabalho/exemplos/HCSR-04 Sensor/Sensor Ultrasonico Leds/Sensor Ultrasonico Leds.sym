@@ -1,0 +1,151 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020-023 fosc
+024-027 distancia
+028-029 HCSR04_get_distance.tiempo_eco
+028-02B @FLT.P1
+028-02B @PRINTF_L32D_651FPFPF.P2
+028     @PSTRINGCN7_651.P3
+028     lcd_init.i
+028     @PSTRINGC7_651.@SCRATCH1
+029     lcd_init.@SCRATCH1
+029     @PSTRINGC7_651.@SCRATCH2
+029     @PSTRINGCN7_651.@SCRATCH1
+02A-02D HCSR04_get_distance.distancia
+02A     @PSTRINGC7_651.@SCRATCH3
+02A     @PSTRINGCN7_651.@SCRATCH2
+02B     @PSTRINGC7_651.@SCRATCH4
+02B     @PSTRINGCN7_651.@SCRATCH3
+02C-02F @FLT.P1
+02C     @PRINTF_L32D_651FPFPF.P2
+02C     @PSTRINGCN7_651.@SCRATCH4
+02D     @PRINTF_L32D_651FPFPF.@SCRATCH1
+02E-031 HCSR04_get_distance.tick
+02E     @PRINTF_L32D_651FPFPF.@SCRATCH2
+02F     @PRINTF_L32D_651FPFPF.@SCRATCH3
+030     @PRINTF_L32D_651FPFPF.@SCRATCH4
+030     @FLT.@SCRATCH1
+031     @PRINTF_L32D_651FPFPF.@SCRATCH5
+031     @FLT.@SCRATCH2
+032-035 @DIVFF.P1
+032-035 @DTOF.P2
+032     HCSR04_get_distance.@SCRATCH1
+032     @PRINTF_L32D_651FPFPF.@SCRATCH6
+033     HCSR04_get_distance.@SCRATCH2
+033     @PRINTF_L32D_651FPFPF.@SCRATCH7
+034-035 @ITOF.P1
+034     HCSR04_get_distance.@SCRATCH3
+034     @PRINTF_L32D_651FPFPF.@SCRATCH8
+035-038 @DIV3232.P1
+035     lcd_putc.c
+035-038 @FTOSD.P1
+035     HCSR04_get_distance.@SCRATCH4
+036-039 @MULFF.P1
+036     lcd_gotoxy.x
+036     @delay_ms1.P1
+036-039 @DIVFF.P2
+037     lcd_gotoxy.y
+038     lcd_gotoxy.address
+039-03C @DIV3232.P1
+039     lcd_gotoxy.@SCRATCH1
+039     @FTOSD.@SCRATCH1
+03A     lcd_send_byte.address
+03A-03D @MULFF.P1
+03A     @DIVFF.@SCRATCH1
+03B     lcd_send_byte.n
+03B     @DIVFF.@SCRATCH2
+03C     @DIVFF.@SCRATCH3
+03C     lcd_send_byte.@SCRATCH1
+03D     lcd_send_nibble.nibble
+03D     @DIVFF.@SCRATCH4
+03D     @DIV3232.@SCRATCH1
+03E     @DIVFF.@SCRATCH5
+03E     @MULFF.@SCRATCH1
+03E     @DIV3232.@SCRATCH2
+03F     @DIVFF.@SCRATCH6
+03F     @MULFF.@SCRATCH2
+03F     @DIV3232.@SCRATCH3
+040     @MULFF.@SCRATCH3
+040     @DIV3232.@SCRATCH4
+041     @MULFF.@SCRATCH4
+041     @DIV3232.@SCRATCH5
+042     @MULFF.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000008  LCD_INIT_STRING.data
+00000C  @const657.call
+00000D  @const663.call
+000015  @const664.call
+00001D  HCSR04_init
+000022  @delay_ms1
+000036  lcd_send_nibble
+000064  lcd_send_byte
+00008B  lcd_init
+0000BA  @MULFF
+00012F  HCSR04_get_distance
+000141  @DTOF
+000169  @DIVFF
+000279  @ITOF
+0002D0  lcd_gotoxy
+0002E2  lcd_putc
+000306  @PSTRINGC7_651
+00035C  lcd_clear
+000366  @PSTRINGCN7_651
+0003BF  @DIV3232
+00040E  @PRINTF_L32D_651FPFPF
+000435  @FTOSD
+0004F0  @FLT
+00052F  MAIN
+00052F  @cinit1
+000544  @cinit2
+
+Project Directory:
+    C:\Users\CQ43\Documents\Curso Pic CCS\21-30\Sensor Ultrasonico Leds\
+
+Project Files:
+    Sensor Ultrasonico Leds.c                               [30-jun-20 18:22  CRC=E2C84C75]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [12-nov-13 14:35  CRC=81334808]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\HCSR04.c [30-jun-20 17:20  CRC=0B65B1F4]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd1.c [26-ene-20 21:59  CRC=CF4BE8CB]
+
+Source signature=0DF91807
+
+Units:
+    Sensor Ultrasonico Leds (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   Sensor Ultrasonico Leds.xsym
+    Errors:      Sensor Ultrasonico Leds.err
+    Ext Symbols: Sensor Ultrasonico Leds.esym
+    INHX8:       Sensor Ultrasonico Leds.hex
+    Symbols:     Sensor Ultrasonico Leds.sym
+    List:        Sensor Ultrasonico Leds.lst
+    Debug/COFF:  Sensor Ultrasonico Leds.cof
+    Project:     Sensor Ultrasonico Leds.ccspjt
+    Call Tree:   Sensor Ultrasonico Leds.tre
+    Statistics:  Sensor Ultrasonico Leds.STA

@@ -1,0 +1,146 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020-023 fosc
+024-027 distancia
+028-029 HCSR04_get_distance.tiempo_eco
+028     lcd_init.i
+028     @PSTRINGCN7_636.P1
+028-02B @PRINTF_L32D_636FPFPF.P2
+028     @PSTRINGC7_636.@SCRATCH1
+029     lcd_init.@SCRATCH1
+029     @PSTRINGC7_636.@SCRATCH2
+029     @PSTRINGCN7_636.@SCRATCH1
+02A-02D HCSR04_get_distance.distancia
+02A     @PSTRINGC7_636.@SCRATCH3
+02A     @PSTRINGCN7_636.@SCRATCH2
+02B     @PSTRINGC7_636.@SCRATCH4
+02B     @PSTRINGCN7_636.@SCRATCH3
+02C     @PRINTF_L32D_636FPFPF.P1
+02C     @PSTRINGCN7_636.@SCRATCH4
+02D     @PRINTF_L32D_636FPFPF.@SCRATCH1
+02E-031 HCSR04_get_distance.tick
+02E     @PRINTF_L32D_636FPFPF.@SCRATCH2
+02F     @PRINTF_L32D_636FPFPF.@SCRATCH3
+030     @PRINTF_L32D_636FPFPF.@SCRATCH4
+031     @PRINTF_L32D_636FPFPF.@SCRATCH5
+032-035 @DTOF.P1
+032-035 @DIVFF.P2
+032-033 @ITOF.P3
+032     HCSR04_get_distance.@SCRATCH1
+032     @PRINTF_L32D_636FPFPF.@SCRATCH6
+033     HCSR04_get_distance.@SCRATCH2
+033     @PRINTF_L32D_636FPFPF.@SCRATCH7
+034     HCSR04_get_distance.@SCRATCH3
+034     @PRINTF_L32D_636FPFPF.@SCRATCH8
+035-038 @FTOSD.P1
+035-038 @DIV3232.P2
+035     lcd_putc.c
+035     HCSR04_get_distance.@SCRATCH4
+036-039 @MULFF.P1
+036-039 @DIVFF.P2
+036     @delay_ms1.P3
+036     lcd_gotoxy.x
+037     lcd_gotoxy.y
+038     lcd_gotoxy.address
+039-03C @DIV3232.P1
+039     lcd_gotoxy.@SCRATCH1
+039     @FTOSD.@SCRATCH1
+03A-03D @MULFF.P1
+03A     lcd_send_byte.address
+03A     @DIVFF.@SCRATCH1
+03B     lcd_send_byte.n
+03B     @DIVFF.@SCRATCH2
+03C     lcd_send_byte.@SCRATCH1
+03C     @DIVFF.@SCRATCH3
+03D     lcd_send_nibble.nibble
+03D     @DIVFF.@SCRATCH4
+03D     @DIV3232.@SCRATCH1
+03E     @DIVFF.@SCRATCH5
+03E     @MULFF.@SCRATCH1
+03E     @DIV3232.@SCRATCH2
+03F     @DIVFF.@SCRATCH6
+03F     @MULFF.@SCRATCH2
+03F     @DIV3232.@SCRATCH3
+040     @MULFF.@SCRATCH3
+040     @DIV3232.@SCRATCH4
+041     @MULFF.@SCRATCH4
+041     @DIV3232.@SCRATCH5
+042     @MULFF.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000008  LCD_INIT_STRING.data
+00000C  @const642.call
+00000D  @const663.call
+000015  @const664.call
+00001D  HCSR04_init
+000022  @delay_ms1
+000036  lcd_send_nibble
+000064  lcd_send_byte
+00008B  lcd_init
+0000BA  @DIVFF
+000184  @MULFF
+0001F9  HCSR04_get_distance
+00020B  @DTOF
+000276  @ITOF
+0002E3  lcd_gotoxy
+0002F5  lcd_putc
+000319  @PSTRINGC7_636
+00036F  lcd_clear
+000379  @PSTRINGCN7_636
+0003D2  @DIV3232
+000421  @PRINTF_L32D_636FPFPF
+000448  @FTOSD
+000503  @cinit1
+000503  MAIN
+000518  @cinit2
+
+Project Directory:
+    C:\Users\CQ43\Documents\Curso Pic CCS\21-30\Sensor Ultrasonico\
+
+Project Files:
+    Sensor Ultrasonico.c                                    [30-jun-20 18:37  CRC=A542D1B9]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [12-nov-13 14:35  CRC=81334808]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd1.c [26-ene-20 21:59  CRC=CF4BE8CB]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\HCSR04.c [30-jun-20 18:37  CRC=0B65B1F4]
+
+Source signature=0C8D6674
+
+Units:
+    Sensor Ultrasonico (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   Sensor Ultrasonico.xsym
+    Errors:      Sensor Ultrasonico.err
+    Ext Symbols: Sensor Ultrasonico.esym
+    INHX8:       Sensor Ultrasonico.hex
+    Symbols:     Sensor Ultrasonico.sym
+    List:        Sensor Ultrasonico.lst
+    Debug/COFF:  Sensor Ultrasonico.cof
+    Project:     Sensor Ultrasonico.ccspjt
+    Call Tree:   Sensor Ultrasonico.tre
+    Statistics:  Sensor Ultrasonico.STA

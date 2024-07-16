@@ -1,0 +1,3 @@
+>>> Warning 202 "pwm_func.c" Line 32(19,20): Variable never used:   t
+      Memory usage:   ROM=4%      RAM=30% - 30%
+      0 Errors,  1 Warnings.

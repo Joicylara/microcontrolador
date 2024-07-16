@@ -1,0 +1,379 @@
+CCS PCM C Compiler, Version 4.104, 5967               25-jun-24 21:03
+
+               Filename: C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\atividades\trabalho.lst
+
+               ROM used: 616 words (8%)
+                         Largest free fragment is 2048
+               RAM used: 20 (5%) at main() level
+                         30 (8%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLW  01
+0001:  MOVWF  0A
+0002:  GOTO   1CE
+0003:  NOP
+.................... #include <16F877A.h> 
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+.................... #list 
+....................  
+.................... #device adc=8 
+....................  
+.................... #FUSES NOWDT, HS, NOPUT, NOPROTECT, NODEBUG, NOBROWNOUT, NOLVP, NOCPD, NOWRT 
+.................... #use delay(clock=6000000) 
+*
+01B7:  MOVLW  2F
+01B8:  MOVWF  04
+01B9:  BCF    03.7
+01BA:  MOVF   00,W
+01BB:  BTFSC  03.2
+01BC:  GOTO   1CB
+01BD:  MOVLW  01
+01BE:  MOVWF  78
+01BF:  CLRF   77
+01C0:  DECFSZ 77,F
+01C1:  GOTO   1C0
+01C2:  DECFSZ 78,F
+01C3:  GOTO   1BF
+01C4:  MOVLW  F1
+01C5:  MOVWF  77
+01C6:  DECFSZ 77,F
+01C7:  GOTO   1C6
+01C8:  NOP
+01C9:  DECFSZ 00,F
+01CA:  GOTO   1BD
+01CB:  BCF    0A.3
+01CC:  BCF    0A.4
+01CD:  GOTO   266 (RETURN)
+.................... #use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7) // Configuração do TTL USB 
+....................  
+.................... #define TRIG_PIN PIN_B0 
+.................... #define ECHO_PIN PIN_B1 
+.................... #define COOLER_PIN PIN_C2 
+....................  
+.................... unsigned int16 get_distance() { 
+....................     unsigned int16 duration, distance; 
+....................  
+....................     // Envia pulso de 10us ao Trigger 
+....................     output_high(TRIG_PIN); 
+*
+015C:  BSF    03.5
+015D:  BCF    06.0
+015E:  BCF    03.5
+015F:  BSF    06.0
+....................     delay_us(10); 
+0160:  MOVLW  04
+0161:  MOVWF  77
+0162:  DECFSZ 77,F
+0163:  GOTO   162
+0164:  GOTO   165
+....................     output_low(TRIG_PIN); 
+0165:  BSF    03.5
+0166:  BCF    06.0
+0167:  BCF    03.5
+0168:  BCF    06.0
+....................  
+....................     // Aguarda Echo 
+....................     while(!input(ECHO_PIN)); 
+0169:  BSF    03.5
+016A:  BSF    06.1
+016B:  BCF    03.5
+016C:  BTFSS  06.1
+016D:  GOTO   169
+....................     set_timer1(0); // Reseta Timer1 
+016E:  CLRF   0F
+016F:  CLRF   0E
+....................     // Aguarda fim do Echo 
+....................     while(input(ECHO_PIN)); 
+0170:  BSF    03.5
+0171:  BSF    06.1
+0172:  BCF    03.5
+0173:  BTFSC  06.1
+0174:  GOTO   170
+....................     duration = get_timer1(); 
+0175:  MOVF   0F,W
+0176:  MOVWF  7A
+0177:  MOVF   0E,W
+0178:  MOVWF  77
+0179:  MOVF   0F,W
+017A:  SUBWF  7A,W
+017B:  BTFSS  03.2
+017C:  GOTO   175
+017D:  MOVF   77,W
+017E:  MOVWF  2F
+017F:  MOVF   7A,W
+0180:  MOVWF  30
+....................  
+....................     // Calcula a distância em centímetros 
+....................     distance = duration / 58; 
+0181:  MOVF   30,W
+0182:  MOVWF  34
+0183:  MOVF   2F,W
+0184:  MOVWF  33
+0185:  CLRF   36
+0186:  MOVLW  3A
+0187:  MOVWF  35
+*
+01AC:  MOVF   79,W
+01AD:  MOVWF  32
+01AE:  MOVF   78,W
+01AF:  MOVWF  31
+....................     return distance; 
+01B0:  MOVF   31,W
+01B1:  MOVWF  78
+01B2:  MOVF   32,W
+01B3:  MOVWF  79
+.................... } 
+01B4:  BCF    0A.3
+01B5:  BCF    0A.4
+01B6:  GOTO   236 (RETURN)
+....................  
+.................... unsigned int16 convert_to_int(char *buffer) { 
+*
+0075:  CLRF   32
+0076:  CLRF   31
+0077:  CLRF   33
+....................     unsigned int16 result = 0; 
+....................     int i = 0; 
+....................      
+....................     while(buffer[i] != '\0') { 
+0078:  MOVF   33,W
+0079:  ADDWF  2F,W
+007A:  MOVWF  04
+007B:  BCF    03.7
+007C:  BTFSC  30.0
+007D:  BSF    03.7
+007E:  MOVF   00,F
+007F:  BTFSC  03.2
+0080:  GOTO   0AC
+....................         result = result * 10 + (buffer[i] - '0'); 
+0081:  MOVF   32,W
+0082:  MOVWF  35
+0083:  MOVF   31,W
+0084:  MOVWF  34
+0085:  CLRF   37
+0086:  MOVLW  0A
+0087:  MOVWF  36
+*
+009C:  MOVF   33,W
+009D:  ADDWF  2F,W
+009E:  MOVWF  04
+009F:  BCF    03.7
+00A0:  BTFSC  30.0
+00A1:  BSF    03.7
+00A2:  MOVLW  30
+00A3:  SUBWF  00,W
+00A4:  ADDWF  78,W
+00A5:  MOVWF  31
+00A6:  MOVF   79,W
+00A7:  MOVWF  32
+00A8:  BTFSC  03.0
+00A9:  INCF   32,F
+....................         i++; 
+00AA:  INCF   33,F
+....................     } 
+00AB:  GOTO   078
+....................      
+....................     return result; 
+00AC:  MOVF   31,W
+00AD:  MOVWF  78
+00AE:  MOVF   32,W
+00AF:  MOVWF  79
+.................... } 
+00B0:  BCF    0A.3
+00B1:  BCF    0A.4
+00B2:  GOTO   216 (RETURN)
+....................  
+.................... void main() { 
+*
+002A:  DATA 00,00
+*
+01CE:  CLRF   04
+01CF:  BCF    03.7
+01D0:  MOVLW  1F
+01D1:  ANDWF  03,F
+01D2:  MOVLW  26
+01D3:  BSF    03.5
+01D4:  MOVWF  19
+01D5:  MOVLW  A6
+01D6:  MOVWF  18
+01D7:  MOVLW  90
+01D8:  BCF    03.5
+01D9:  MOVWF  18
+01DA:  BSF    03.5
+01DB:  BSF    1F.0
+01DC:  BSF    1F.1
+01DD:  BSF    1F.2
+01DE:  BCF    1F.3
+01DF:  MOVLW  07
+01E0:  MOVWF  1C
+....................     unsigned int16 distance, desired_distance; 
+....................     char input_buffer[10]; 
+....................  
+....................     setup_adc_ports(NO_ANALOGS); 
+*
+01E4:  BSF    03.5
+01E5:  BSF    1F.0
+01E6:  BSF    1F.1
+01E7:  BSF    1F.2
+01E8:  BCF    1F.3
+....................     setup_timer_1(T1_INTERNAL | T1_DIV_BY_1); 
+01E9:  MOVLW  85
+01EA:  BCF    03.5
+01EB:  MOVWF  10
+....................     setup_ccp1(CCP_PWM); 
+01EC:  BCF    20.2
+01ED:  MOVF   20,W
+01EE:  BSF    03.5
+01EF:  MOVWF  07
+01F0:  BCF    03.5
+01F1:  BCF    07.2
+01F2:  MOVLW  0C
+01F3:  MOVWF  17
+....................     setup_timer_2(T2_DIV_BY_16, 255, 1); 
+01F4:  MOVLW  00
+01F5:  MOVWF  78
+01F6:  IORLW  06
+01F7:  MOVWF  12
+01F8:  MOVLW  FF
+01F9:  BSF    03.5
+01FA:  MOVWF  12
+....................  
+....................     // Configuração inicial 
+....................     set_pwm1_duty(0); 
+01FB:  BCF    03.5
+01FC:  CLRF   15
+....................  
+....................     printf("Digite a altura desejada: "); 
+01FD:  MOVLW  04
+01FE:  BSF    03.6
+01FF:  MOVWF  0D
+0200:  MOVLW  00
+0201:  MOVWF  0F
+0202:  BCF    03.6
+0203:  GOTO   02B
+....................     gets(input_buffer); // Lê a entrada do usuário 
+0204:  MOVLW  25
+0205:  MOVWF  04
+0206:  BCF    03.7
+0207:  DECF   04,F
+0208:  INCF   04,F
+0209:  BTFSS  0C.5
+020A:  GOTO   209
+020B:  MOVF   1A,W
+020C:  MOVWF  00
+020D:  MOVLW  0D
+020E:  SUBWF  00,W
+020F:  BTFSS  03.2
+0210:  GOTO   208
+0211:  CLRF   00
+....................     desired_distance = convert_to_int(input_buffer); // Converte a entrada para inteiro 
+0212:  CLRF   30
+0213:  MOVLW  25
+0214:  MOVWF  2F
+0215:  GOTO   075
+0216:  MOVF   79,W
+0217:  MOVWF  24
+0218:  MOVF   78,W
+0219:  MOVWF  23
+....................     printf("Altura desejada: %Lu cm\r\n", (unsigned long) desired_distance); // Verifique a altura desejada 
+021A:  MOVLW  12
+021B:  BSF    03.6
+021C:  MOVWF  0D
+021D:  MOVLW  00
+021E:  MOVWF  0F
+021F:  BCF    03.0
+0220:  MOVLW  11
+0221:  BCF    03.6
+0222:  MOVWF  2F
+0223:  CALL   0B3
+0224:  MOVLW  10
+0225:  MOVWF  04
+0226:  MOVF   24,W
+0227:  MOVWF  30
+0228:  MOVF   23,W
+0229:  MOVWF  2F
+022A:  CALL   103
+022B:  MOVLW  1C
+022C:  BSF    03.6
+022D:  MOVWF  0D
+022E:  MOVLW  00
+022F:  MOVWF  0F
+0230:  BCF    03.0
+0231:  MOVLW  05
+0232:  BCF    03.6
+0233:  MOVWF  2F
+0234:  CALL   0B3
+....................  
+....................     while(TRUE) { 
+....................         distance = get_distance(); 
+0235:  GOTO   15C
+0236:  MOVF   79,W
+0237:  MOVWF  22
+0238:  MOVF   78,W
+0239:  MOVWF  21
+....................  
+....................         // Envia a distância atual ao computador via serial 
+....................         printf("Altura atual: %Lu cm\r\n", (unsigned long) distance); 
+023A:  MOVLW  1F
+023B:  BSF    03.6
+023C:  MOVWF  0D
+023D:  MOVLW  00
+023E:  MOVWF  0F
+023F:  BCF    03.0
+0240:  MOVLW  0E
+0241:  BCF    03.6
+0242:  MOVWF  2F
+0243:  CALL   0B3
+0244:  MOVLW  10
+0245:  MOVWF  04
+0246:  MOVF   22,W
+0247:  MOVWF  30
+0248:  MOVF   21,W
+0249:  MOVWF  2F
+024A:  CALL   103
+024B:  MOVLW  27
+024C:  BSF    03.6
+024D:  MOVWF  0D
+024E:  MOVLW  00
+024F:  MOVWF  0F
+0250:  BSF    03.0
+0251:  MOVLW  05
+0252:  BCF    03.6
+0253:  MOVWF  2F
+0254:  CALL   0B3
+....................  
+....................         // Controle do cooler via PWM 
+....................         if(distance < desired_distance) { 
+0255:  MOVF   22,W
+0256:  SUBWF  24,W
+0257:  BTFSS  03.0
+0258:  GOTO   262
+0259:  BTFSS  03.2
+025A:  GOTO   25F
+025B:  MOVF   23,W
+025C:  SUBWF  21,W
+025D:  BTFSC  03.0
+025E:  GOTO   262
+....................             set_pwm1_duty(255); // Liga o cooler (máximo) 
+025F:  MOVLW  FF
+0260:  MOVWF  15
+....................         } else { 
+0261:  GOTO   263
+....................             set_pwm1_duty(0); // Desliga o cooler 
+0262:  CLRF   15
+....................         } 
+....................  
+....................         delay_ms(100); // Atraso para estabilidade 
+0263:  MOVLW  64
+0264:  MOVWF  2F
+0265:  GOTO   1B7
+....................     } 
+0266:  GOTO   235
+.................... } 
+....................  
+0267:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F3A   HS NOWDT NOPUT NODEBUG NOPROTECT NOBROWNOUT NOLVP NOCPD NOWRT
