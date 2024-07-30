@@ -46,6 +46,7 @@
 042     @DIV88.P1
 042     lcd_init.row
 042-045 HCSR04_get_distance.distancia
+042     MAIN.@SCRATCH3
 042     @PSTRINGC7_102.@SCRATCH3
 042     @PSTRINGC7_9600_62_63.@SCRATCH3
 042     @PSTRINGCN7_9600_62_63.@SCRATCH2
@@ -53,6 +54,7 @@
 043     LCD_PUTC.in_data
 043     @DIV88.P1
 043     lcd_init.i
+043     MAIN.@SCRATCH4
 043     @PSTRINGCN7_9600_62_63.@SCRATCH3
 044     atoi.base
 044     @delay_ms1.P1
@@ -131,7 +133,7 @@ ROM Allocation:
 0313  @DTOF
 0030  setup_pwm
 06C6  set_cooler_speed
-06CB  MAIN
+06C9  MAIN
 03E5  @SFTOI
 000C  @const389
 0460  @PSTRINGC7_102
@@ -144,7 +146,7 @@ ROM Allocation:
 068C  @PRINTF_U_9600_62_63
 0022  @const411
 0029  @const413
-06CB  @cinit
+0800  @cinit
 0136  StrtoulGO
 0136  StrtolGO
 

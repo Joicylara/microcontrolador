@@ -1,58 +1,58 @@
 
-ROM used: 2010 (25%)
-          2010 (25%) including unused fragments
+ROM used: 2119 (26%)
+          2430 (30%) including unused fragments
 
           1 Average locations per line
           3 Average locations per statement
 
-RAM used: 25 (7%) at main() level
+RAM used: 27 (7%) at main() level
           64 (17%) worst case
 
 Stack used: 6 worst case (out of 8 total available)
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  107    47   8  controle.c
+  118    53   8  controle.c
   326     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
   211    77  12  i2c_Flex_LCD.c
- 1273   359  58  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stdlib.h
+ 1273   359  57  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stdlib.h
    28     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
-  409   121  20  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+  409   121  19  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h
    28     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
    33    16   3  HCSR04.c
 ----- -----
- 2415   620 Total
+ 2426   626 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     21   1   1   485  7.8  @delay_ms1
-0     74   4   1   351  7.0  @I2C_WRITE_1
+0     21   1   1             @delay_ms1
+0     74   3   1             @I2C_WRITE_1
 0     10   0   1    63  2.3  lcd_backlight_led
 0     77   4   3   574  5.9  i2c_send_nibble
 0     67   3   3   149  2.8  lcd_send_byte
 0     10   0   0    61  1.9  lcd_clear
-0      8   0   0   264  6.8  @const92
-0    113   6   5   902  5.8  lcd_init
+0      8   0   0             @const92
+0    113   5   5   902  5.8  lcd_init
  Inline        7   681  8.0  lcd_gotoxy
-0     92   5   1   364  6.2  LCD_PUTC
- Inline        2  1068 11.1  @MUL88
-0    117   6  13  2308 12.4  @MULFF
- Inline        2  2354 12.5  @ITOF
-0    202  10  14    53  2.6  @DIVFF
-0    256  13   9  1815 10.5  atoi
+0     92   4   1   364  6.2  LCD_PUTC
+ Inline        2             @MUL88
+0    117   6  13             @MULFF
+ Inline        2             @ITOF
+0    202  10  14             @DIVFF
+0    256  12   9  1815 10.5  atoi
 0     11   1   0    84  1.7  HCSR04_init
 0    228  11  14   412  4.3  HCSR04_get_distance
  Inline        4             @DTOF
 0     19   1   0    50  1.5  setup_pwm
-0      5   0   1    29  1.3  set_cooler_speed
-0    271  13   2  1815 10.0  MAIN
-0     31   2   4             @SFTOI
+0      3   0   1    29  1.3  set_cooler_speed
+1    382  18   4  2037  9.9  MAIN
+0     31   1   4             @SFTOI
 0      7   0   0             @const389
 0     70   3   3             @PSTRINGC7_102
 0     21   1   3             @DIV88
 0     53   3   2             @PRINTF_U_102
 0      9   0   0             @const403
-0     74   4   3             @PSTRINGC7_9600_62_63
+0     74   3   3             @PSTRINGC7_9600_62_63
 0      6   0   0             @const405
 0     82   4   4             @PSTRINGCN7_9600_62_63
 0     58   3   2             @PRINTF_U_9600_62_63
@@ -60,22 +60,22 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0      7   0   0             @const413
 
 Program metrics:
-    Functions               20
-    Statements              620
-    Comments                941
-    Volume (V)              21902
-    Difficilty (D)          123.0
-    Effort to implement (E) 2694626
-    Time to implement (T)   41 hours, 35 minutes
-    Est Delivered Bugs (B)  6
-    Cyclomatic Complexity   68
-    Maintainability (MI)    32
+    Functions               13
+    Statements              626
+    Comments                939
+    Volume (V)              10778
+    Difficilty (D)          61.8
+    Effort to implement (E) 665767
+    Time to implement (T)   10 hours, 16 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   30
+    Maintainability (MI)    101
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF  2006  38  
-00800-00FFF     0  2048  
+00004-007FF  1733  311  
+00800-00FFF   382  1666  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  
 

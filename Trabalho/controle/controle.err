@@ -1,7 +1,7 @@
->>> Warning 205 "controle.c" Line 96(1,1): Unsigned variable is never less than zero
->>> Warning 204 "controle.c" Line 96(1,1): Condition always FALSE
->>> Warning 206 "controle.c" Line 98(1,1): Variable of this data type is never greater than this constant
->>> Warning 204 "controle.c" Line 98(1,1): Condition always FALSE
+>>> Warning 205 "controle.c" Line 107(1,1): Unsigned variable is never less than zero
+>>> Warning 204 "controle.c" Line 107(1,1): Condition always FALSE
+>>> Warning 206 "controle.c" Line 109(1,1): Variable of this data type is never greater than this constant
+>>> Warning 204 "controle.c" Line 109(1,1): Condition always FALSE
 >>> Warning 202 "C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\Trabalho\controle\i2c_Flex_LCD.c" Line 174(13,17): Variable never used:   data
-      Memory usage:   ROM=25%      RAM=7% - 17%
+      Memory usage:   ROM=26%      RAM=7% - 17%
       0 Errors,  5 Warnings.

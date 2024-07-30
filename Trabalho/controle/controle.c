@@ -26,7 +26,7 @@ int32 fosc = 6000000;
 #define P_TRIG PIN_D1
 #include "HCSR04.c"
 
-unsigned int altura = 0;
+signed int altura = 0;
 
 void setup_pwm() {
     setup_timer_2(T2_DIV_BY_16, 255, 1); 
@@ -53,9 +53,11 @@ void main() {
     lcd_backlight_led(ON); // Enciende la luz de Fondo
     HCSR04_init();
     
-    altura = HCSR04_get_distance();
+    altura = HCSR04_get_distance()*1.6;
+    
         
     lcd_clear();
+    
     printf(lcd_putc, "Alt. atual: ");
     printf(lcd_putc, "%u", altura);
     delay_ms(1000);
@@ -64,35 +66,44 @@ void main() {
     int index = 0;
     int alturaDesejada = 0;
     int erro = 0;   
-    int velocidadeCooler = 0;
+    int velocidadeCooler = 50;
 
     fprintf(wireless, "Altura desejada: ");
-
-    // Ler caracteres até encontrar '\n' ou '\r'
+    
+    
     do {
         buffer[index] = getc(wireless);
     } while (buffer[index++] != '\n' && buffer[index - 1] != '\r' && index < sizeof(buffer) - 1);
 
-    buffer[index - 1] = '\0'; // Termina a string com um caractere nulo
+    buffer[index - 1] = '\0'; 
 
-    alturaDesejada = atoi(buffer); // Converte a string para um inteiro
+   // Converte a string para um inteiro
+    alturaDesejada = atoi(buffer); 
     fprintf(wireless, "\naltura: %u", alturaDesejada);
+
+    set_cooler_speed(velocidadeCooler);
+    delay_ms(500);
 
     while(true) {
         
-        altura = HCSR04_get_distance();
+        altura = HCSR04_get_distance()*1.6;
+        altura = 50 - altura;
+        
+        if(altura < 0){
+         altura = 0;
+        }
         
         erro = alturaDesejada - altura;
         
         lcd_clear();
         printf(lcd_putc, "Alt. atual: ");
         printf(lcd_putc, "%u", altura);
-        delay_ms(1000);
+        delay_ms(10);
         printf(lcd_putc, "\nAlt. desej: ");
         printf(lcd_putc, "%u", alturaDesejada);
-        delay_ms(2000);
+        delay_ms(10);
         
-        velocidadeCooler = 127 + erro * 2;
+        velocidadeCooler = velocidadeCooler + erro;
         if (velocidadeCooler < 0) {
             velocidadeCooler = 0;
         }else if (velocidadeCooler > 255) {
