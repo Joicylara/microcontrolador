@@ -1,0 +1,25 @@
+[PROJECT]
+Target=C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\Prova1\Questão1_Joicy\questao01_joicy.hex
+Development_Mode=
+Processor_Text=PIC16F877A
+ToolSuite=CCS
+Processor=0x877A
+[C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\Prova1\Questão1_Joicy\questao01_joicy]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\Prova1\Questão1_Joicy\questao01_joicy.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=C:\Users\JOICE\OneDrive\Documentos\Faculdade\microcontrolador\Prova1\Questão1_Joicy\questao01_joicy
+[Opened Files]
+1=questao01_joicy.c
+2=questao01_joicy.h
+3=

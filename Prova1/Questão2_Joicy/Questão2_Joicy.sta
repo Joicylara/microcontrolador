@@ -1,0 +1,45 @@
+
+ROM used: 104 (1%)
+          104 (1%) including unused fragments
+
+          0 Average locations per line
+          7 Average locations per statement
+
+RAM used: 6 (2%) at main() level
+          7 (2%) worst case
+
+Stack used: 0 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   44    15 100  Questão2_Joicy.c
+  326     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
+----- -----
+  370    15 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    100  96   0   338  3.3  main
+
+Program metrics:
+    Functions               1
+    Statements              15
+    Comments                77
+    Volume (V)              338
+    Difficilty (D)          3.3
+    Effort to implement (E) 1110
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    139
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   100  1944  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+
