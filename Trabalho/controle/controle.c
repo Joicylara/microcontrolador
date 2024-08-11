@@ -28,17 +28,9 @@ int32 fosc = 6000000;
 
 signed int altura = 0;
 
-void setup_pwm() {
-    setup_timer_2(T2_DIV_BY_16, 255, 1); 
-    setup_ccp1(CCP_PWM); 
-}
 
-void set_cooler_speed(unsigned int8 speed) {
-    set_pwm1_duty(speed);
-}
 
 void main() { 
-    setup_pwm();
 
     setup_adc_ports(NO_ANALOGS);
     setup_adc(ADC_CLOCK_DIV_2);
@@ -48,12 +40,15 @@ void main() {
     setup_timer_1(T1_DISABLED);
     setup_comparator(NC_NC_NC_NC);
     setup_vref(FALSE);
+    setup_timer_2(T2_DIV_BY_16, 255, 1); 
+    setup_ccp1(CCP_PWM);
+
 
     lcd_init(0x4E, 16, 2);
     lcd_backlight_led(ON); // Enciende la luz de Fondo
     HCSR04_init();
     
-    altura = HCSR04_get_distance()*1.6;
+    altura = (27 - HCSR04_get_distance()/23)*50;
     
         
     lcd_clear();
@@ -81,19 +76,19 @@ void main() {
     alturaDesejada = atoi(buffer); 
     fprintf(wireless, "\naltura: %u", alturaDesejada);
 
-    set_cooler_speed(velocidadeCooler);
+    set_pwm1_duty(velocidadeCooler);
     delay_ms(500);
 
     while(true) {
-        
-        altura = HCSR04_get_distance()*1.6;
-        altura = 50 - altura;
+        // topo 4
+        // base 27
+        altura = HCSR04_get_distance();
         
         if(altura < 0){
          altura = 0;
         }
         
-        erro = alturaDesejada - altura;
+       
         
         lcd_clear();
         printf(lcd_putc, "Alt. atual: ");
@@ -103,13 +98,13 @@ void main() {
         printf(lcd_putc, "%u", alturaDesejada);
         delay_ms(10);
         
-        velocidadeCooler = velocidadeCooler + erro;
-        if (velocidadeCooler < 0) {
-            velocidadeCooler = 0;
-        }else if (velocidadeCooler > 255) {
-            velocidadeCooler = 255;
+        //velocidadeCooler = velocidadeCooler + erro;
+        if (altura < alturaDesejada && velocidadeCooler<250) {
+            velocidadeCooler++;
+        }else if (altura < alturaDesejada && velocidadeCooler>1) {
+            velocidadeCooler --;
         }
-        set_cooler_speed(velocidadeCooler);
+        set_pwm1_duty(velocidadeCooler);
     }
     
     

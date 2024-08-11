@@ -1,7 +1,6 @@
 ÀÄcontrole
-   ÀÄMAIN  1/382  Ram=4
+   ÀÄMAIN  1/429  Ram=6
       ÃÄ??0??
-      ÃÄsetup_pwm  0/19  Ram=0
       ÃÄlcd_init  0/113  Ram=5
       ³  ÃÄ@delay_ms1  0/21  Ram=1
       ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
@@ -75,6 +74,8 @@
       ³  ÃÄ@DIVFF  0/202  Ram=14
       ³  ÃÄ@MULFF  0/117  Ram=13
       ³  ÀÄ@MULFF  0/117  Ram=13
+      ÃÄ@DIVFF  0/202  Ram=14
+      ÃÄ@ADDFF  0/323  Ram=16
       ÃÄ@MULFF  0/117  Ram=13
       ÃÄ@SFTOI  0/31  Ram=4
       ÃÄlcd_clear  0/10  Ram=0
@@ -447,7 +448,6 @@
       ÃÄ@PRINTF_U_9600_62_63  0/58  Ram=2
       ³  ÃÄ@DIV88  0/21  Ram=3
       ³  ÀÄ@DIV88  0/21  Ram=3
-      ÃÄset_cooler_speed  0/3  Ram=1
       ÃÄ@delay_ms1  0/21  Ram=1
       ÃÄHCSR04_get_distance  0/228  Ram=14
       ³  ÃÄ@DTOF  (Inline)  Ram=4
@@ -457,7 +457,6 @@
       ³  ÃÄ@DIVFF  0/202  Ram=14
       ³  ÃÄ@MULFF  0/117  Ram=13
       ³  ÀÄ@MULFF  0/117  Ram=13
-      ÃÄ@MULFF  0/117  Ram=13
       ÃÄ@SFTOI  0/31  Ram=4
       ÃÄlcd_clear  0/10  Ram=0
       ³  ÃÄlcd_send_byte  0/67  Ram=3
@@ -1166,5 +1165,4 @@
       ³           ÃÄ@I2C_WRITE_1  0/74  Ram=1
       ³           ÃÄ@I2C_WRITE_1  0/74  Ram=1
       ³           ÀÄ@I2C_WRITE_1  0/74  Ram=1
-      ÃÄ@delay_ms1  0/21  Ram=1
-      ÀÄset_cooler_speed  0/3  Ram=1
+      ÀÄ@delay_ms1  0/21  Ram=1
