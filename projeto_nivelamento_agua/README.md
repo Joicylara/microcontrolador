@@ -56,7 +56,11 @@ O principal objetivo deste projeto é demonstrar o controle automatizado do nív
 
 ### 🧪 Testes
 
-
+<div align = "center"> 
+<img src = "https://github.com/user-attachments/assets/9d804ef7-e522-4b07-8157-a1ecbf0cb6a7"  width = "200px">
+<img src = "https://github.com/user-attachments/assets/0c2f6861-de46-4194-9248-88dc0514092f" width = "200px">
+<img src = "https://github.com/user-attachments/assets/4fa46e9d-1e06-4950-b11e-ffd34151114f"  width = "200px">
+ </div>
 
 ### 📝 Considerações finais
 O projeto demonstra o controle de nível de água, mas ainda há espaço para melhorias. Uma das principais áreas a ser aprimorada é a sintonia do controlador PID e a precisão nos valores lidos pelo sensor ultrassônico. A escolha adequada dos parâmetros Kp, Ki e Kd pode resultar em um controle mais preciso e eficiente, e o uso de um outro sensor de distância pode melhorar a precisão da leitura.
