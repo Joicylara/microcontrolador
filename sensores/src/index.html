@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Sensor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container" >
+        <div class="tabs">
+            <button class="tab-button active" id="data-tab">Dados</button>
+            <button class="tab-button" id="chart-tab">Gráfico</button>
+        </div>
+        
+        <div id="data" class="tab-content active">
+            <div class="card">
+                <h1>Dados do Sensor</h1>
+                <p><i class="fas fa-droplet icon"></i> Umidade: <span id="humidity">--</span> %</p>
+                <p><i class="fas fa-thermometer-half icon"></i> Temperatura: <span id="temperature">--</span> °C</p>
+            </div>
+        </div>
+        
+        <div id="chart" class="tab-content">
+            <h1>Gráfico de Dados</h1>
+            <canvas id="sensor-chart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" type="module"></script>
+</body>
+</html>

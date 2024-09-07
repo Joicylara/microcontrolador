@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+.background{
+    position: fixed;
+    inset: 0;
+    background-image: url(img/background3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 0px;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    backdrop-filter: blur(10px); /* Opção para adicionar um efeito de desfoque no fundo */
+}
+
+tabs {
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #00796b; /* Cor verde-água */
+    color: #ffffff;
+    border: none;
+    border-radius: 12px 12px 0 0;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.tab-button.active {
+    background-color: #004d40; /* Cor verde escuro */
+}
+
+.tab-button:hover {
+    background-color: #004d40;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #00796b; /* Cor verde-água */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    font-weight: bold;
+    font-size: 24px;
+    color: #004d40; /* Cor verde escuro */
+    margin-left: 10px;
+}
+
+canvas {
+    max-width: 100%;
+}
+
+/* Adiciona um pouco de espaço à direita dos ícones */
+.icon {
+    margin-right: 8px; /* Ajuste o valor conforme necessário */
+    font-size: 1.2em;  /* Ajuste o tamanho do ícone conforme necessário */
+    color: #87baf0;    /* Ajuste a cor do ícone se necessário */
+}
