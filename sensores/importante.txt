@@ -44,3 +44,9 @@ https://sensores-micro-29f70-default-rtdb.firebaseio.com/
     appId: "1:873229173748:web:cb414cafee3854448d2fa1",
     measurementId: "G-GJSSMQ4M5J"
 };
+
+// link sobre os detalhes do projeto
+Project Console: https://console.firebase.google.com/project/sensores-micro-29f70/overview
+
+//link do deploy 
+Hosting URL: https://sensores-micro-29f70.web.app
