@@ -19,7 +19,9 @@ Os dados são exibidos em uma página web de forma clara e intuitiva.
 1. Conecte o ESP32 ao seu sensor DHT22 para obter os dados de temperatura e umidade.
 2. Configure o Firebase com suas próprias credenciais de projeto, atualizando as variáveis apiKey, authDomain, databaseURL, etc., no código da página web.
 3. Faça upload do código para o ESP32, que irá enviar os dados ao Realtime Database.
-4. Abra a aplicação web em um navegador para visualizar os dados em tempo real
+4. Pegue o código da inteface(pode dar um git clone).
+5. abra o Visual Studio Code e dê um npm i.
+6. Abra a aplicação web em um navegador para visualizar os dados em tempo real
 
 ### 🛠️ Configuração do Firebase
 - Crie um projeto no Firebase Console e habilite o Realtime Database.
