@@ -27,7 +27,7 @@ Os dados são exibidos em uma página web de forma clara e intuitiva.
 - Use as credenciais do Firebase no arquivo JavaScript da aplicação para conectar sua página ao banco de dados.
 
 
-📷 Imagens do Projeto
+### 📷 Imagens do Projeto
 <div align = "center"> 
   <h3>Imagem ilustrativa do esquemático da montagem</h3>
   <img src = "https://github.com/user-attachments/assets/1c46d975-9e53-43e9-a0be-0d303434d385"  width = "500px">
